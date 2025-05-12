@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bitnovia Coins Invest DevOps" />
+    <meta
+      name="keywords"
+      content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Bitcoin Charts | noviaxchangeinvest.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <!-- <link href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet"> -->
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <script src="{{ url_for('static', filename='js/chart.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/result-chart.js')}}" defer></script>
+    <script src="{{ url_for('static', filename='js/doughnut-chart.js')}}" defer></script>
+
+  </head>
+
+  <body style="color: #000">
+    <!-- start per-loader -->
+    <!-- <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div> -->
+    <!-- end per-loader -->
+
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+  <div class="main-menu-header py-3">
+      <div class="container">
+          <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+              <div class="row align-items-center">
+                  <div class="col-lg-2">
+                      <a href="{{ url_for('users.index')}}" class="main-logo">
+                          <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="sticky-logo-hide"
+              width="150rem" height="30rem"
+              style=""
+            />
+
+            <img
+            src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+            alt="logo"
+            class="sticky-logo-show"
+            width="150rem" height="30rem"
+          />
+<!--                          <img class="sticky-logo-hide" src="{{ url_for('static', filename='imagess/logo-white.png')}}" alt="logo">-->
+                          <!-- <img class="sticky-logo-show" src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo"> -->
+                      </a>
+                  </div><!-- end col-lg-2 -->
+                  <div class="col-lg-10">
+                      <div class="main-navbar d-flex align-items-center justify-content-between">
+                          <nav class="main-nav main-nav-white text-capitalize main-nav-2">
+                              <ul>
+                                  <li>
+                                      <a href="#">home <i class="fa fa-angle-down font-size-12" ></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                    <li><a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-mega-menu">
+                                      <a href="#"> Menu <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <div class="drop-menu mega-menu">
+                                          <ul class="row no-gutters">
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                                                      <li><a href="{{ url_for('users.service')}}">services</a></li>
+                          <li><a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services</a></li>
+                          <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                                                      <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                                                      <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                                                     <li><a href="{{ url_for('auth.reset_password')}}"> Reset password</a></li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <a href="#">team <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">blog <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                          <div class="navbar-toolbar d-flex align-items-center">
+                              <ul class="list-items list-items-white">
+                                  <li class="d-inline-block mr-2"><a href="{{ url_for('auth.login')}}"> Login </a></li>
+                                  <li class="d-inline-block card hover-y" style="background: orange !important; border-radius: 50px;"><a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                Sign Up </a></li>
+                              </ul>
+                              <div class="hamburger hamburger-white">
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                              </div>
+                          </div><!-- end navbar-toolbar -->
+                      </div><!-- end main-navbar -->
+                  </div><!-- end col-lg-10 -->
+              </div><!-- end row -->
+          </div><!-- end main-menu-wrapper -->
+      </div> <!-- end container -->
+  </div><!-- end main-menu-header -->
+</header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <h2 class="sec-title text-white my-2">Bitcoin Chart</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#"> Home </a></li> <i class="" title="Go top"></i>&nbsp;
+              <li class="breadcrumb-item active" aria-current="page">
+                Bitcoin Chart
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START CHART AREA
+================================= -->
+    <section class="chart-area section--padding">
+      <div class="container">
+        <div class="row padding-bottom-100px">
+          <div class="col-lg-6">
+            <div class="chart-content mb-5 mb-lg-0">
+              <h2 class="sec-title mb-3" style="color: orange">
+                Bitcoin Distribution
+              </h2>
+              <p class="mb-4">
+                Bitcoin distribution refers to the allocation and spread of
+                Bitcoin (BTC) among various participants in the cryptocurrency
+                ecosystem. It involves the issuance of new Bitcoins to miners as
+                rewards for validating transactions and securing the network, as
+                well as the trading and transfer of BTC among users and
+                investors.
+              </p>
+
+              <p class="mb-4">
+                Here are some key aspects of Bitcoin distribution: <br /><br />
+
+                <strong style="color: orange"> Exchanges </strong> Bitcoin is
+                traded on various cryptocurrency exchanges. Users can buy, sell,
+                and trade BTC on these platforms. The distribution of Bitcoin
+                can shift as users move their holdings between exchange wallets
+                and personal wallets. <br /><br />
+
+                <strong style="color: orange"> Investors and Hodlers </strong>
+                Many individuals and institutions invest in Bitcoin for various
+                reasons, including its store of value properties. Some long-term
+                investors, often referred to as "hodlers," hold onto their
+                Bitcoin for extended periods, reducing the amount available for
+                trading. <br /><br />
+
+                <strong style="color: orange"> Wallets </strong> Bitcoin is
+                stored in digital wallets, which can be software-based (online
+                or mobile) or hardware-based (physical devices). Users hold
+                their private keys in wallets, which control access to their
+                BTC. The distribution can change as people create new wallets or
+                consolidate holdings. <br /><br />
+
+                <strong style="color: orange"> Network Activity </strong> The
+                distribution of Bitcoin can vary based on network activity.
+                During periods of increased trading or adoption, BTC may change
+                hands more frequently.<br /><br />
+
+                <strong style="color: orange"> Lost Bitcoins </strong> It's
+                estimated that a significant number of Bitcoins have been lost
+                over the years due to various reasons, such as forgotten
+                passwords or lost hardware wallets. These "lost" Bitcoins are
+                effectively removed from circulation. <br /><br />
+              </p>
+
+              <p class="mb-4">
+                The distribution of Bitcoin is dynamic and influenced by market
+                dynamics, adoption, mining activity, and individual user
+                behaviour. It plays a crucial role in the overall health and
+                stability of the Bitcoin network and its value as a
+                decentralized digital currency.
+              </p>
+
+              <a href="{{ url_for('users.investment_plan')}}" class="btn btn-primary">
+                Choose Bitcoin Investment Plan
+                <i class="fa fa-angle-right ml-1"></i
+              ></a>
+            </div>
+            <!-- end chart-content -->
+          </div>
+          <!-- end col-lg-6 -->
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <canvas id="resultChart"></canvas>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-6 -->
+        </div>
+        <!-- end row -->
+        <div class="row">
+          <div class="col-lg-5">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <canvas id="doughnutChart"></canvas>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-5 -->
+          <div class="col-lg-6 offset-lg-1">
+            <div class="chart-content">
+              <h2 class="sec-title mb-4">
+                Building an Ecosystem for Blockchain
+              </h2>
+              <ul class="list-items mb-5">
+                <li class="mb-3">
+                  <i class="fa fa-check icon bg-1 text-white"></i>
+                  Sign through an iterative mind mapping ideas
+                </li>
+                <li class="mb-3">
+                  <i class="fa fa-check icon bg-2 text-white"></i>
+                  Instant and secure transactions
+                </li>
+                <li class="mb-3">
+                  <i class="fa fa-check icon bg-3 text-white"></i>
+                  Decentralized, instant and secure payments
+                </li>
+              </ul>
+              <a href="#" class="btn btn-primary"
+                >Read More <i class="fa fa-angle-right ml-1"></i
+              ></a>
+            </div>
+            <!-- end chart-content -->
+          </div>
+          <!-- end col-lg-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end chart-area -->
+    <!-- ================================
+       START CHART AREA
+================================= -->
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+<section class="footer-area padding-top-80px pb-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <a href="{{ url_for('users.index')}}" class="d-block">
+                      <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo">
+                  </a>
+                  <ul class="list-items pt-4">
+                      <li class="mb-3"><a href=""><i class="fa fa-envelope mr-1 font-size-14"></i>
+             hello@noviaxchangeinvest.com </a></li>
+                      <li class="mb-3"><i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+              President Building, <br/> 37b Av. John F. Kennedy, <br/> 1855 Kirchberg, <br/> Luxembourg </li>
+                      <li class="mb-3"><i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun </li>
+                  </ul>
+                  <div class="social-icons">
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+                      <li class="mb-2"><a href="{{url_for('users.investment_plan')}}"> Investment Plan </a></li>
+
+                      <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="#">Guide</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+                      <li class="mb-2"><a href="#">Advertise</a></li>
+                      <li class="mb-2"><a href="#">Help Center</a></li>
+                      <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+
+      </div><!-- end row -->
+  </div><!-- end container -->
+  <hr class="border-top-gray my-4">
+
+  <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <!-- Google Translate container -->
+    <div id="google_translate_element"></div>
+    <!-- end Google Translate container -->
+
+          <p class="copy-desc" style="color: #000 !important;">Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+        <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> | <a href="{{ url_for('users.faq')}}"> FAQ </a>
+    </p>
+
+    <div>
+    <a href="https://www.cssf.lu/en/">
+    <img src="{{ url_for('static', filename='imagess/cssf.png')}}" alt="" class="img-fluid mr-3 flex-shrink-0" style="width: 100px;">
+    </a>
+    </div>
+      </div><!-- end copyright-content -->
+  </div><!-- end container -->
+
+  {% extends 'layout.html' %}
+
+</section><!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="far fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <!-- Start chart js -->
+    <script src="{{ url_for('static', filename='js/chart.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/result-chart.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/doughnut-chart.js')}}"></script>
+    <!-- End chart js -->
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+    <!--Start of Tawk.to Script-->
+
+    <script type="text/javascript">
+      var Tawk_API = Tawk_API || {},
+        Tawk_LoadStart = new Date();
+      (function () {
+        var s1 = document.createElement("script"),
+          s0 = document.getElementsByTagName("script")[0];
+        s1.async = true;
+        s1.src = "https://embed.tawk.to/64f342f3a91e863a5c113c7a/1h9b3r2t8";
+        s1.charset = "UTF-8";
+        s1.setAttribute("crossorigin", "*");
+        s0.parentNode.insertBefore(s1, s0);
+      })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+  </body>
+</html>

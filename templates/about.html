@@ -1,0 +1,1162 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bitnovia Coins DevOps" />
+    <meta
+      name="keywords"
+      content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>About | bitnoviacoinsinvest.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  </head>
+
+  <body style="color: #000">
+    <!-- start per-loader -->
+    <!-- <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div> -->
+    <!-- end per-loader -->
+
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+    <header class="header-area">
+      <div class="main-menu-header py-3">
+        <div class="container">
+          <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+            <div class="row align-items-center">
+              <div class="col-lg-2">
+                <a href="{{ url_for('users.index') }}" class="main-logo">
+                  <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="d-inline-block align-text-top img-fluid"
+              width="150rem" height="50rem"
+              style=""
+            />
+            <img
+            src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+            alt="logo"
+            class="sticky-logo-show"
+            width="150rem" height="30rem"
+          />
+                  <!-- <img
+                    class="sticky-logo-show"
+                    src="{{ url_for('static', filename='imagess/logo-black.png') }}"
+                    alt="logo"
+                  /> -->
+                </a>
+              </div>
+              <!-- end col-lg-2 -->
+              <div class="col-lg-10">
+                <div
+                  class="main-navbar d-flex align-items-center justify-content-between"
+                >
+                  <nav
+                    class="main-nav main-nav-white text-capitalize main-nav-2"
+                  >
+                    <ul>
+                      <li>
+                        <a href="#"
+                          >home <i class="fa fa-angle-down font-size-12"></i
+                        ></a>
+                        <ul class="drop-menu">
+                          <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                          <li>
+                            <a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-mega-menu">
+                        <a href="#">
+                          Menu <i class="fa fa-angle-down font-size-12"></i
+                        ></a>
+                        <div class="drop-menu mega-menu">
+                          <ul class="row no-gutters">
+                            <li class="mega-menu-item col-lg-4">
+                              <ul>
+                                <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                                <li><a href="{{ url_for('users.service')}}">services</a></li>
+                                <li>
+                                  <a href="{{ url_for('users.investment_plan')}}">
+                                    Bitcoin Investment Plan
+                                  </a>
+                                </li>
+                              </ul>
+                            </li>
+                            <li class="mega-menu-item col-lg-4">
+                              <ul>
+                                <li>
+                                  <a href="{{ url_for('users.terms_of_service')}}">
+                                    Terms of Services</a
+                                  >
+                                </li>
+                                <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                                <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                              </ul>
+                            </li>
+                            <li class="mega-menu-item col-lg-4">
+                              <ul>
+                                <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                                <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                                <li>
+                                  <a href="{{ url_for('auth.reset_password')}}">
+                                    Reset password</a
+                                  >
+                                </li>
+                              </ul>
+                            </li>
+                          </ul>
+                        </div>
+                      </li>
+                      <li>
+                        <a href="#"
+                          >team <i class="fa fa-angle-down font-size-12"></i
+                        ></a>
+                        <ul class="drop-menu">
+                          <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                        </ul>
+                      </li>
+                      <li>
+                        <a href="#"
+                          >blog <i class="fa fa-angle-down font-size-12"></i
+                        ></a>
+                        <ul class="drop-menu">
+                          <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </nav>
+                  <div class="navbar-toolbar d-flex align-items-center">
+                    <ul class="list-items list-items-white">
+                      <li class="d-inline-block mr-2">
+                        <a href="{{ url_for('auth.login')}}"> Login </a>
+                      </li>
+                      <li
+                        class="d-inline-block card hover-y"
+                        style="
+                          background: orange !important;
+                          border-radius: 50px;
+                        "
+                      >
+                        <a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                          Sign Up
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="hamburger hamburger-white">
+                      <span class="line"></span>
+                      <span class="line"></span>
+                      <span class="line"></span>
+                    </div>
+                  </div>
+                  <!-- end navbar-toolbar -->
+                </div>
+                <!-- end main-navbar -->
+              </div>
+              <!-- end col-lg-10 -->
+            </div>
+            <!-- end row -->
+          </div>
+          <!-- end main-menu-wrapper -->
+        </div>
+        <!-- end container -->
+      </div>
+      <!-- end main-menu-header -->
+    </header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <h2 class="sec-title text-white my-2">About Us</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#">Home</a></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+              <li class="breadcrumb-item active" aria-current="page">
+                About Us
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START ABOUT AREA
+================================= -->
+    <section class="about-area section-padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6 align-self-center">
+            <div class="about-content mb-5 mb-lg-0">
+              <h2
+                class="sec-title mb-5"
+                style="color: orange; font-size: 2.3rem"
+              >
+                Bitnovia Coins: Pioneering the Future of Crypto Investment
+              </h2>
+              <p class="sec-desc d-flex align-items-center text-color">
+                <span class="sec-year-time mr-3"> 5 </span>
+                <span>
+                  Years experience managing clients bitcoin investments.
+                </span>
+              </p>
+              <p class="mt-4 mb-3">
+                Bitnovia Coins, a cutting-edge private online investment
+                company, as a company we have emerged as a trailblazer in the
+                rapidly evolving landscape of digital assets. With our
+                headquarters nestled in the heart of Luxembourg, we are
+                regulated by CSSF (The Commission de Surveillance du Secteur
+                Financier). Bitnovia Coins has positioned itself as a leading
+                player in providing innovative investment solutions for the
+                modern era. <br /><br />
+
+                Founded by a group of visionary entrepreneurs with a deep-rooted
+                passion for blockchain technology, Bitnovia Coins aims to bridge
+                the gap between traditional finance and the digital realm. The
+                company's mission revolves around empowering investors with the
+                tools, knowledge, and resources needed to navigate the intricate
+                world of cryptocurrencies. <br /><br />
+
+                Bitnovia Coins offers a diverse range of investment options
+                tailored to suit various risk appetites and investment goals.
+                Whether you're an experienced crypto enthusiast or someone
+                exploring digital investments for the first time, Bitnovia Coins
+                has a solution that caters to your needs. <br /><br />
+              </p>
+
+              <p>
+                One of the standout features of Bitnovia Coins is their
+                commitment to transparency and security. The company employs
+                cutting-edge blockchain technology to ensure that each
+                transaction is verifiable, immutable, and secure. Additionally,
+                stringent security measures are in place to safeguard investors'
+                funds and personal information from potential threats.
+                <br /><br />
+
+                "We believe that cryptocurrencies and blockchain technology are
+                reshaping the financial landscape," says Lucian Hoffmann, CEO of
+                Bitnovia Coins. <br />
+                "Our team is dedicated to demystifying the complexities
+                associated with crypto investments, making them accessible to a
+                wider audience while maintaining the highest standards of
+                security." <br /><br />
+
+                Bitnovia Coins' user-friendly platform provides a seamless
+                experience, allowing investors to effortlessly invest their
+                bitcoin (or digital assets). The company also offers educational
+                resources, market insights, and expert analysis to empower
+                investors with the knowledge needed to make informed decisions.
+                <br /><br />
+
+                As the crypto market continues to evolve, Bitnovia Coins remains
+                at the forefront of innovation, constantly adapting and
+                expanding its offerings to stay ahead of the curve. The
+                company's dedication to driving the adoption of cryptocurrencies
+                and blockchain technology sets it apart as a true pioneer in the
+                field of crypto investment.
+              </p>
+            </div>
+            <!-- end about-content -->
+          </div>
+          <!-- end col-lg-6 -->
+
+          <div class="col-lg-5 offset-lg-1">
+            <h4 style="color: orange; font-weight: bold">
+              What is Bitcoin Mining?
+            </h4>
+            <br />
+
+            <p style="color: orange">Kindly watch the Video below...</p>
+            <br />
+
+            <div class="img-box">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/about-img.jpg') }}"
+                alt="about-us"
+                class="img__item lazy"
+              />
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/about-img2.jpg') }}"
+                alt="about-us"
+                class="img__item img__item-2 lazy"
+              />
+              <a
+                class="icon-element play-btn"
+                href="https://youtu.be/6Cp38evd38E"
+                data-fancybox="about-video"
+              >
+                <i class="fa fa-play"></i>
+              </a>
+              <span class="overflow-text">bitcon</span>
+            </div>
+            <!-- end img-box -->
+          </div>
+          <!-- end col-lg-5 -->
+        </div>
+        <!-- end row -->
+        <div class="row padding-top-120px padding-bottom-60px">
+          <div class="col-lg-3 col-md-6">
+            <div class="counter-item">
+              <div class="icon-element mb-4">
+                <i class="fa fa-sack-dollar"></i>
+              </div>
+              <h2 class="counter-number counter mb-2">85389000</h2>
+              <p class="counter-title">Total Investment Transactions</p>
+            </div>
+            <!-- end counter-item-->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="counter-item mt-lg-5">
+              <div class="icon-element mb-4">
+                <i class="fa fa-wallet"></i>
+              </div>
+              <h2 class="counter-number counter mb-2">6547</h2>
+              <p class="counter-title">Bitcoin Wallets</p>
+            </div>
+            <!-- end counter-item-->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="counter-item">
+              <div class="icon-element mb-4">
+                <i class="fa fa-users"></i>
+              </div>
+              <h2 class="counter-number counter mb-2">7543</h2>
+              <p class="counter-title">Happy Users</p>
+            </div>
+            <!-- end counter-item-->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="counter-item mt-lg-5">
+              <div class="icon-element mb-4">
+                <i class="fa fa-hands-usd"></i>
+              </div>
+              <h2 class="counter-number counter mb-2">47150</h2>
+              <p class="counter-title">Bitcoin Investors</p>
+            </div>
+            <!-- end counter-item-->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+        <hr class="border-top-gray my-0" />
+        <p class="text-center mt-4" style="font-style: italic">
+          Get Started
+          <a
+            href="sign-up.html"
+            class="btn-link ml-1"
+            style="color: orange; font-weight: bold"
+          >
+            Sign Up for an Investment account today
+            <i class="fa fa-angle-right ml-1"></i
+          ></a>
+        </p>
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end about-area -->
+    <!-- ================================
+       START ABOUT AREA
+================================= -->
+
+    <!-- ================================
+       START TIMELINE AREA
+================================= -->
+    <section class="timeline-area section-padding bg-gray">
+      <div class="container">
+        <h4
+          class="sec-title text-center"
+          style="color: orange; font-size: 2rem"
+        >
+          How We Started Bitnovia Coins
+        </h4>
+        <ul class="timeline-wrap mt-5">
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> March 2018 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  Company was founded
+                </h3>
+                <p class="card-desc">
+                  Bitnovia Coins was founded by a group of visionary
+                  entrepreneurs passionate about blockchain and cryptocurrency,
+                  aiming to bridge traditional finance with the digital world.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> June 2018 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  Company is growing
+                </h3>
+                <p class="card-desc">
+                  We are experiencing steady growth, driven by our commitments
+                  to innovation, transparency, and expanding investment
+                  offerings to meet evolving bitcoin in the cryptocurrency
+                  market demands.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> August 2018</span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  Development Started
+                </h3>
+                <p class="card-desc">
+                  Development commenced with a dedicated team's vision and
+                  expertise, guided by a mission to simplify and secure bitcoin
+                  investments for a global audience.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> December 2018 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">Pre-ICO Opens</h3>
+                <p class="card-desc">
+                  Pre-ICO launch heralded a pivotal moment, inviting early
+                  investors to participate in our cryptocurrency investment
+                  platform's groundbreaking journey towards financial innovation
+                  and excellence.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> February 2019 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  Private Token Round
+                </h3>
+                <p class="card-desc">
+                  Conducted private token rounds, selectively offering early
+                  supporters the opportunity to invest, strengthening our
+                  foundation for pioneering bitcoin and cryptocurrency
+                  investment solutions.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> April 2019 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">Pre-ICO Closed</h3>
+                <p class="card-desc">
+                  Successfully concluded company's pre-ICO phase, achieving
+                  investment goals and transitioning towards its mission of
+                  delivering cutting-edge bitcoin and cryptocurrency investment
+                  services to a global audience.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> September 2019 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  Development Platform Launch
+                </h3>
+                <p class="card-desc">
+                  Unveiled its development platform, marking a significant
+                  milestone in our journey to empower investors with
+                  user-friendly, secure, and innovative cryptocurrency
+                  investment solutions.
+                </p>
+              </div>
+            </div>
+          </li>
+          <li class="timeline">
+            <div class="timeline-prev">
+              <span class="badge badge-md badge-primary"> January 2020 </span>
+            </div>
+            <div class="timeline-next card mb-0">
+              <div class="card-body">
+                <h3 class="card-title" style="color: orange">
+                  App Integration Process
+                </h3>
+                <p class="card-desc">
+                  Successfully concluded its pre-ICO phase, achieving investment
+                  goals and transitioning towards its mission of delivering
+                  cutting-edge cryptocurrency investment services to a global
+                  audience.
+                </p>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end timeline-area -->
+    <!-- ================================
+       START TIMELINE AREA
+================================= -->
+
+    <!-- ================================
+       START TEAM AREA
+================================= -->
+    <section class="team-area section--padding">
+      <div class="container">
+        <h2 class="sec-title text-center" style="color: orange">Our Team</h2>
+        <div class="row mt-5">
+          <div class="col-lg-3 col-md-6">
+            <div class="card text-center hover-y">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/team1.jpg') }}"
+                alt="team image"
+                class="card-img-top lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title mb-1">
+                  <a href="#"> Nixon Hoffmann </a>
+                </h4>
+                <p class="font-size-15">CEO & Founder</p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card text-center hover-y">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/team2.jpg') }}"
+                alt="team image"
+                class="card-img-top lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title mb-1">
+                  <a href="#"> Cooper Baldwin </a>
+                </h4>
+                <p class="font-size-15">Chief Technology Officer</p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card text-center hover-y">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/team3.jpg') }}"
+                alt="team image"
+                class="card-img-top lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title mb-1">
+                  <a href="#"> Gonzalez Newton </a>
+                </h4>
+                <p class="font-size-15">Crypto Security Architect</p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="card text-center hover-y">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/team4.jpg') }}"
+                alt="team image"
+                class="card-img-top lazy"
+              />
+              <div class="card-body">
+                <h4 class="card-title mb-1">
+                  <a href="#"> Elliot Dickens </a>
+                </h4>
+                <p class="font-size-15">Senior Software Engineer</p>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end team-area -->
+    <!-- ================================
+    START TEAM AREA
+================================= -->
+
+    <!-- ================================
+       START HOW-IT-WORKS AREA
+================================= -->
+    <section
+      class="how-it-works-area bg-gray section-padding text-center overflow-hidden"
+    >
+      <div class="container">
+        <h4
+          class="sec-title text-center"
+          style="color: orange; font-size: 2.5rem"
+        >
+          Video Testimonials
+        </h4>
+
+        <p style="color: orange">
+          If we're permitted we can't wait to share your video testimonials.
+        </p>
+
+        <div class="col-lg-10 mx-auto mt-5">
+          <div class="mining-content-wrap">
+            <div class="generic-video-img-wrap">
+              <img
+                src="{{ url_for('static', filename='imagess/img-loading.jpg') }}"
+                data-src="{{ url_for('static', filename='imagess/blog-img8.jpg') }}"
+                alt="mining image"
+                class="generic-video__img lazy"
+              />
+              <a
+                class="icon-element play-btn icon-element-lg hover-y"
+                href="https://youtu.be/YRVwsp2-neM"
+                data-fancybox="preview-video"
+              >
+                <i class="fas fa-play"></i>
+              </a>
+            </div>
+            <!-- end mining-img -->
+
+            <div class="mining-content mt-5 half-shape">
+              <ul class="list-items">
+                <li class="text-black d-inline-block mr-4">
+                  <i class="fa fa-check icon bg-1 text-white"></i>
+                  Instant Deposit & Withdrawals Transactions
+                </li>
+                <li class="text-black d-inline-block mr-4">
+                  <i class="fa fa-check icon bg-2 text-white"></i> Secured Data
+                  Protection
+                </li>
+                <li class="text-black d-inline-block mr-4">
+                  <i class="fa fa-check icon bg-3 text-white"></i> Active
+                  Support Desk
+                </li>
+              </ul>
+              <p class="pt-4 pb-5">
+                We're a tested and proven bitcoin investment platform.
+              </p>
+              <a href="{{ url_for('auth.sign_up')}}" class="btn btn-primary">
+                Open an Investment Account Today
+              </a>
+            </div>
+            <!-- end mining-item -->
+          </div>
+          <!-- end mining-content -->
+        </div>
+        <!-- end col-lg-10 -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end how-it-works-area -->
+    <!-- ================================
+       START HOW-IT-WORKS AREA
+================================= -->
+
+    <hr class="border-top-gray my-0" />
+
+    <!-- ================================
+       START CLIENT-LOGO AREA
+================================= -->
+    <section class="client-logo-area section-padding position-relative">
+      <span class="ring-shape ring-shape-1 position-absolute"></span>
+      <span class="ring-shape ring-shape-2 position-absolute"></span>
+      <span class="ring-shape ring-shape-3 position-absolute"></span>
+      <span class="ring-shape ring-shape-4 position-absolute"></span>
+      <span class="ring-shape ring-shape-5 position-absolute"></span>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5">
+            <h4 class="sec-title mb-4 mb-lg-0" style="font-size: 2rem">
+              Trusted by <br />
+              Cryptocurrency Exchanges
+            </h4>
+          </div>
+          <!-- end col-lg-6 -->
+          <div class="col-lg-7">
+            <div class="client-logo-carousel-2 owl-carousel">
+              <div class="client-logo-item d-inline-block">
+                <img src="{{ url_for('static', filename='imagess/client1.pngg') }}" alt="brand image" />
+              </div>
+              <!-- end client-logo-item -->
+              <br />
+              <div class="client-logo-item d-inline-block">
+                <img src="{{ url_for('static', filename='imagess/client2.png') }}" alt="brand image" />
+              </div>
+              <!-- end client-logo-item --><br />
+              <div class="client-logo-item d-inline-block">
+                <img src="{{ url_for('static', filename='imagess/client3.png') }}" alt="brand image" />
+              </div>
+              <!-- end client-logo-item --><br />
+              <div class="client-logo-item d-inline-block">
+                <img src="{{ url_for('static', filename='imagess/client4.png') }}" alt="brand image" />
+              </div>
+              <!-- end client-logo-item --><br />
+              <div class="client-logo-item d-inline-block">
+                <img src="{{ url_for('static', filename='imagess/client5.png') }}" alt="brand image" />
+              </div>
+              <!-- end client-logo-item --><br />
+            </div>
+            <!-- end client-logo-carousel -->
+          </div>
+          <!-- end col-lg-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end client-logo-area -->
+    <!-- ================================
+       START CLIENT-LOGO AREA
+================================= -->
+
+    <!-- ================================
+       START TESTIMONIAL AREA
+================================= -->
+    <section
+      class="testimonial-area section-padding text-center position-relative bg-gray"
+    >
+      <img
+        src="{{ url_for('static', filename='imagess/small-team1.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team2.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team3.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team4.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team5.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team6.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <img
+        src="{{ url_for('static', filename='imagess/small-team7.jpg') }}"
+        alt="testtmonial-image"
+        class="random-img"
+      />
+      <div class="container">
+        <h3
+          class="sec-title"
+          style="font-size: 1.9rem; color: #ff7e00; font-style: italic"
+        >
+          Our Investors Testimonials...
+        </h3>
+        <div class="col-lg-8 mx-auto mt-5">
+          <div class="client-testimonial owl-carousel owl-theme">
+            <div class="testimonial-card">
+              <div class="testimonial__img">
+                <span class="testimonial__img-circle"></span>
+                <img src="{{ url_for('static', filename='imagess/small-team1.jpg') }}" alt="testimonial image" />
+              </div>
+              <p
+                class="testimonial__desc"
+                style="font-size: 0.9rem; line-height: 1.5rem"
+              >
+                "Bitnovia Coins has helped me diversify my investment portfolio
+                in the cryptocurrency market. <br />
+                Their team's expertise and transparent approach have given me
+                confidence in my investments. <br />
+                I've seen steady growth in my portfolio, and their educational
+                resources are very informative."
+              </p>
+              <h4 class="testimonial__title">Tom Smith</h4>
+              <span class="testimonial__meta">United States</span>
+            </div>
+            <!-- end testimonial-card -->
+            <div class="testimonial-card">
+              <div class="testimonial__img">
+                <span class="testimonial__img-circle"></span>
+                <img src="{{ url_for('static', filename='imagess/small-team2.jpg') }}" alt="testimonial image" />
+              </div>
+              <p
+                class="testimonial__desc"
+                style="font-size: 0.9rem; line-height: 1.5rem"
+              >
+                "I'm new to cryptocurrency investments, and Bitnovia Coins made
+                the process incredibly straightforward. <br />
+                Their user-friendly platform and the range of investment plans
+                allowed me to choose an option <br />
+                that suits my risk tolerance. Plus, their customer support team
+                patiently answered all my questions."
+              </p>
+              <h4 class="testimonial__title">Emily Amien</h4>
+              <span class="testimonial__meta"> Luxembourg </span>
+            </div>
+            <!-- end testimonial-card -->
+            <div class="testimonial-card">
+              <div class="testimonial__img">
+                <span class="testimonial__img-circle"></span>
+                <img src="{{ url_for('static', filename='imagess/small-team3.jpg') }}" alt="testimonial image" />
+              </div>
+              <p
+                class="testimonial__desc"
+                style="font-size: 0.9rem; line-height: 1.5rem"
+              >
+                "Bitnovia Coins has been a great addition to my retirement
+                strategy. <br />
+                The Growth Plan offers a balanced approach that aligns with my
+                need for steady returns. <br />
+                The ability to withdraw funds when needed is crucial for my
+                financial security."
+              </p>
+              <h4 class="testimonial__title">Andre Richardson</h4>
+              <span class="testimonial__meta">United Kingdom</span>
+            </div>
+            <!-- end testimonial-card -->
+          </div>
+          <!-- end client-testimonial -->
+        </div>
+        <!-- end col-lg-8 -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end testimonial-area -->
+    <!-- ================================
+       START TESTIMONIAL AREA
+================================= -->
+{% extends 'layout.html' %}
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+    <section class="footer-area padding-top-80px pb-4">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <a href="{{ url_for('index')}}" class="d-block">
+                <img src="{{ url_for('static', filename='imagess/logo-black.png') }}" alt="logo" />
+              </a>
+              <ul class="list-items pt-4">
+                <li class="mb-3">
+                  <a href=""
+                    ><i class="fa fa-envelope mr-1 font-size-14"></i>
+                    hello@bitnoviacoinsinvest.com
+                  </a>
+                </li>
+
+                <li class="mb-3">
+                  <i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+                  President Building, <br />
+                  37b Av. John F. Kennedy, <br />
+                  1855 Kirchberg, <br />
+                  Luxembourg
+                </li>
+                <li class="mb-3">
+                  <i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun
+                </li>
+              </ul>
+              <div class="social-icons">
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+              <div class="title-shape border-bottom-0"><span></span></div>
+              <ul class="list-items list-items-hover pt-4">
+                <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+                <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+                <li class="mb-2">
+                  <a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a>
+                </li>
+                <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+                <li class="mb-2"><a href="{{ url_for('userscontact')}}"> Contact </a></li>
+                <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+              <div class="title-shape border-bottom-0"><span></span></div>
+              <ul class="list-items list-items-hover pt-4">
+                <li class="mb-2"><a href="#">Guide</a></li>
+                <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+                <li class="mb-2"><a href="#">Advertise</a></li>
+                <li class="mb-2"><a href="#">Help Center</a></li>
+                <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                <li class="mb-2">
+                  <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a>
+                </li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <hr class="border-top-gray my-4" />
+
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between"
+        >
+          <p class="copy-desc" style="color: #000 !important">
+            Copyright &copy; 2024 Bitnovia Coins. All Rights Reserved.
+            <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> |
+            <a href="{{ url_for('users.faq')}}"> FAQ </a>
+          </p>
+          <!-- Google Translate container -->
+          <div id="google_translate_element"></div>
+          <!-- end Google Translate container -->
+
+          <div class="select-picker-wrap">
+            <select
+              class="select-picker select-picker-sm"
+              data-width="180"
+              data-size="5"
+            >
+              <option value="en" selected="">English</option>
+            </select>
+          </div>
+        </div>
+        <!-- end copyright-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="fa fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <!-- end counter js -->
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+    <!-- Toastr Notifications - EXTERNAL JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    ></script>
+
+    <!-- NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      toastr.options = {
+        closeButton: true,
+        debug: true,
+        newestOnTop: true,
+        progressBar: true,
+        positionClass: "toast-bottom-left",
+        preventDuplicates: true,
+        showDuration: "3000",
+        hideDuration: "500",
+        timeOut: "3500",
+        extendedTimeOut: "1500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+      };
+
+      setInterval(() => {
+        $.ajax({
+          url: "https://randomuser.me/api/",
+          dataType: "json",
+          success: function (data) {
+            action = ["deposited ", "deposited ", "withdrew ", " invested "];
+            amt = [
+              "$5500",
+              "$7500",
+              "$8,000",
+              "$1,500",
+              "$5,000",
+              "$1,500",
+              "$2,070",
+              "$3,030",
+              "$5,500",
+              "$9000",
+              "$650",
+              "4,500",
+            ];
+            toastr.success(
+              data.results[0].name.first +
+                " " +
+                data.results[0].name.last +
+                " " +
+                action[Math.floor(Math.random() * 3)] +
+                " " +
+                amt[Math.floor(Math.random() * 10)]
+            );
+            console.log(data.results[0].name.first);
+          },
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      const usernamex = [
+        "Sam Courtright ",
+        "Evia Boster",
+        "Leopoldo Alexis ",
+        "Laure Mccrory",
+        "Jana Radel ",
+        "Brunilda Macon ",
+        "Bula Pries ",
+        "Cassidy Rudnick",
+        "Hiram Kilburn  ",
+        "Latrisha Greenly",
+        "Loyd Sadowski ",
+        "Audrey Lindstedt ",
+        "Gisela Chewning",
+        "Katie Rosenstein",
+        "Lorinda Lex  ",
+        "Carie Schreiber",
+        "Ethel Vanatta ",
+        "Carli Spraggs ",
+        "Vivien Basil  ",
+        "Moshe Bogardus ",
+      ];
+    </script>
+
+    <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+  </body>
+</html>

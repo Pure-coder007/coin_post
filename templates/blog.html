@@ -1,0 +1,628 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bitnovia Coins DevOps" />
+    <meta
+      name="keywords"
+      content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Blog | noviaxchangeinvest.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body style="color: #000">
+    <!-- start per-loader -->
+    <!-- <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div> -->
+    <!-- end per-loader -->
+
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+  <div class="main-menu-header py-3">
+      <div class="container">
+          <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+              <div class="row align-items-center">
+                  <div class="col-lg-2">
+                      <a href="{{ url_for('users.index')}}" class="main-logo">
+                          <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="sticky-logo-hide"
+              width="150rem" height="30rem"
+              style=""
+            />
+
+            <img
+            src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+            alt="logo"
+            class="sticky-logo-show"
+            width="150rem" height="30rem"
+          />
+<!--                          <img class="sticky-logo-hide" src="{{ url_for('static', filename='imagess/logo-white.png')}}" alt="logo">-->
+                          <!-- <img class="sticky-logo-show" src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo"> -->
+                      </a>
+                  </div><!-- end col-lg-2 -->
+                  <div class="col-lg-10">
+                      <div class="main-navbar d-flex align-items-center justify-content-between">
+                          <nav class="main-nav main-nav-white text-capitalize main-nav-2">
+                              <ul>
+                                  <li>
+                                      <a href="#">home <i class="fa fa-angle-down font-size-12" ></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                    <li><a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-mega-menu">
+                                      <a href="#"> Menu <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <div class="drop-menu mega-menu">
+                                          <ul class="row no-gutters">
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                                                      <li><a href="{{ url_for('users.service')}}">services</a></li>
+                          <li><a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services</a></li>
+                          <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                                                      <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                                                      <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                                                     <li><a href="{{ url_for('auth.reset_password')}}"> Reset password</a></li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <a href="#">team <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">blog <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                          <div class="navbar-toolbar d-flex align-items-center">
+                              <ul class="list-items list-items-white">
+                                  <li class="d-inline-block mr-2"><a href="{{ url_for('auth.login')}}"> Login </a></li>
+                                  <li class="d-inline-block card hover-y" style="background: orange !important; border-radius: 50px;"><a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                Sign Up </a></li>
+                              </ul>
+                              <div class="hamburger hamburger-white">
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                              </div>
+                          </div><!-- end navbar-toolbar -->
+                      </div><!-- end main-navbar -->
+                  </div><!-- end col-lg-10 -->
+              </div><!-- end row -->
+          </div><!-- end main-menu-wrapper -->
+      </div> <!-- end container -->
+  </div><!-- end main-menu-header -->
+</header>
+<!-- ==========================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <h2 class="sec-title text-white my-2">Blog</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#">Home</a></li></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+              <li class="breadcrumb-item active" aria-current="page">Blog</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START BLOG AREA
+================================= -->
+    <section class="blog-area section--padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="blog-single.html" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-1.jpg')}}"
+                  data-src="{{ url_for('static', filename='imagess/img-loading-1.jpg')}}"
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    Bitcoin adoption growing as Lightning Network hits all-time
+                    high
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  The amount of bitcoin stored on the Lightning Network has
+                  jumped by two-thirds over the past year to hit an all-time
+                  high of 5,580 coin, according to crypto data firm. US-based
+                  BitPay said transaction volumes jumped 18 per cent last year
+                  versus 2021. CoinsPaid said volumes in the fourth quarter of
+                  2022 rose 32 per cent compared with a year before.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-1.jpg')}}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>Klein Russel</h6>
+                    <p class="font-size-14">6 hours ago</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="#" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-4.jpg') }}"
+                  data-src="{{ url_for('static', filename='imagess/img-loading-4.jpg') }}"
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    Bitcoin price resurgence revives ‘digital gold’ comparisons
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  Bitcoin’s recent price revival has once again bolstered the
+                  cryptocurrency’s reputation as a form of “digital gold” among
+                  some analysts, who claim it serves as a safe-haven asset
+                  during times of geopolitical and economic crisis. The world’s
+                  leading cryptocurrency is up more than 10 per cent over the
+                  last week, despite turmoil among the banking and tech sector.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-2.jpg') }}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>Solomon Wilder</h6>
+                    <p class="font-size-14">7 hours ago</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="#" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-3.jpg') }}"
+                  data-src=""
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    How Grayscale’s Win Will Reshape the Crypto Industry
+                    According to Experts
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  A few days ago, the U.S. Court of Appeals for the D.C. Circuit
+                  ruled in favor of digital asset management company Grayscale
+                  Investments in its lawsuit against the Securities and Exchange
+                  Commission (SEC). Andrey Stoychev, project manager at crypto
+                  exchange Nexo, opined that BTC’s rally after the win was a
+                  “vital boost in morale” for investors after the asset had one
+                  of its worst weeks since March 2024.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-3.jpg') }}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>Anders Jacobs</h6>
+                    <p class="font-size-14">17 Hours ago</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="#" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-4.jpg') }}"
+                  data-src=""
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    US Presidential Nominee DeSantis Introduces a Pro-Crypto
+                    Declaration of Economic Independence.
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  Ron DeSantis – Florida’s Governor and one of the US
+                  Presidential candidates – unveiled a “Declaration of Economic
+                  Independence,” where he outlined some of the biggest financial
+                  challenges that America currently faces. His pronouncement
+                  focuses on improving Americans’ financial well-being and
+                  reinforcing the States as the most dominant economy.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-4.jpg') }}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>Kevin Helms</h6>
+                    <p class="font-size-14">November 24, 2024</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="#" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-5.jpg') }}"
+                  data-src=""
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    Bitcoin Price Analysis and Crypto Market Predictions for
+                    September
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  August didn’t end well for cryptocurrencies, and Bitcoin had a
+                  rough start to September. So, what are the current
+                  expectations? After a period of 10 days of sideways movement,
+                  increased volatility didn’t last long. BTC is now drawing a
+                  straight line on the chart. Expectations for September and the
+                  current BTC chart analysis can give us some ideas.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-5.jpg') }}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>David Wright</h6>
+                    <p class="font-size-14">November 23, 2024</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+          <div class="col-lg-4 col-md-6">
+            <div class="card hover-y">
+              <a href="#" class="d-block">
+                <img
+                  class="card-img-top lazy"
+                  src="{{ url_for('static', filename='imagess/img-loading-6.jpg') }}"
+                  data-src="{{ url_for('static', filename='imagess/blog-img3.jpg') }}"
+                  alt="Blog image"
+                />
+              </a>
+              <div class="card-body">
+                <h5 class="card-title">
+                  <a href="#">
+                    London Stock Exchange ventures into blockchain for
+                    traditional asset trading
+                  </a>
+                </h5>
+                <p class="card-text" style="font-size: 0.95rem !important">
+                  The London Stock Exchange (LSE) Group was in the early stages
+                  of creating a blockchain-based platform for traditional
+                  financial assets. This development signifies a notable move
+                  towards incorporating blockchain technology into the world of
+                  traditional finance.
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="media mt-4">
+                  <img
+                    class="mr-3 flex-shrink-0 rounded-circle"
+                    src="{{ url_for('static', filename='imagess/avatar-6.jpg') }}"
+                    alt="Author image"
+                  />
+                  <div class="media-body align-items-center">
+                    <h6>Philippe Duchy</h6>
+                    <p class="font-size-14">November 22, 2024</p>
+                  </div>
+                </div>
+              </div>
+              <!-- end card-body -->
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-4 -->
+        </div>
+        <!-- end row -->
+        <nav aria-label="Page navigation example">
+          <ul class="pagination justify-content-center">
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Previous">
+                <span aria-hidden="true" class="fa fa-angle-left"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <li class="page-item active">
+              <a class="page-link" href="#">1</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#" aria-label="Next">
+                <span aria-hidden="true" class="fa fa-angle-right"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end blog-area -->
+    <!-- ================================
+       START BLOG AREA
+================================= -->
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+    <section class="footer-area padding-top-80px pb-4 bg-gray">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <a href="{{ url_for('users.index')}}" class="d-block">
+                <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo" />
+              </a>
+              <ul class="list-items pt-4">
+                <li class="mb-3">
+                  <a href=""
+                    ><i class="fa fa-envelope mr-1 font-size-14"></i>
+                    hello@noviaxchangeinvest.com
+                  </a>
+                </li>
+
+                <li class="mb-3">
+                  <i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+                  President Building, <br />
+                  37b Av. John F. Kennedy, <br />
+                  1855 Kirchberg, <br />
+                  Luxembourg
+                </li>
+                <li class="mb-3">
+                  <i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun
+                </li>
+              </ul>
+              <div class="social-icons">
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a href="#" class="icon-element icon-element-sm mr-1"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+              </div>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+              <div class="title-shape border-bottom-0"><span></span></div>
+              <ul class="list-items list-items-hover pt-4">
+                <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+                <li class="mb-2"><a href="{{url_for('users.team')}}"> Team</a></li>
+                <li class="mb-2">
+                  <a href="{{url_for('users.investment_plan')}}"> Investment Plan </a>
+                </li>
+                <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+                <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+                <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+            <div class="footer-item mb-5">
+              <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+              <div class="title-shape border-bottom-0"><span></span></div>
+              <ul class="list-items list-items-hover pt-4">
+                <li class="mb-2"><a href="#">Guide</a></li>
+                <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+                <li class="mb-2"><a href="#">Advertise</a></li>
+                <li class="mb-2"><a href="#">Help Center</a></li>
+                <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                <li class="mb-2">
+                  <a href="{{ url_for('users.terms_of_service')}}">Terms of Services</a>
+                </li>
+              </ul>
+            </div>
+            <!-- end footer-item -->
+          </div>
+          <!-- end col-lg-3 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+      <hr class="border-top-gray my-4" />
+
+      <div class="container">
+        <div
+          class="d-flex flex-wrap align-items-center justify-content-between"
+        >
+          <!-- Google Translate container -->
+          <div id="google_translate_element"></div>
+          <!-- end Google Translate container -->
+
+          <p class="copy-desc" style="color: #000 !important">
+            Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+            <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> |
+            <a href="{{ url_for('users.faq')}}"> FAQ </a>
+          </p>
+
+          <div>
+            <a href="https://www.cssf.lu/en/">
+              <img
+                src="{{ url_for('static', filename='imagess/cssf.png') }}"
+                alt=""
+                class="img-fluid mr-3 flex-shrink-0"
+                style="width: 100px"
+              />
+            </a>
+          </div>
+        </div>
+        <!-- end copyright-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="far fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+
+
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+  </body>
+</html>

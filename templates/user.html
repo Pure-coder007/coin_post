@@ -1,0 +1,855 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <title> noviaxchangeinvest | User Dashboard </title>
+
+
+  <meta charset="utf-8" />
+  <meta
+   name="viewport"
+   content="width=device-width, initial-scale=1"
+  />
+  <link
+   rel="icon"
+   type="image/png"
+   href="{{ url_for('static', filename='assets/img/logo-black.png') }}"
+   sizes="16x16"
+  />
+  <link
+   rel="stylesheet"
+   href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+   href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+   rel="stylesheet"
+  />
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <!-- custom css -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css')}}" />
+
+  <script type="text/javascript">
+    // Fix typo and use window.addEventListener
+    window.addEventListener('DOMContentLoaded', () => {
+      const myModal = new bootstrap.Modal(document.getElementById('openModalCenter'));
+      myModal.show();
+    });
+
+    // Alternatively, you can use jQuery to show the modal
+    // $(document).ready(function() {
+    //   $('#openModalCenter').modal('show');
+    // });
+  </script>
+
+
+
+  <script>
+   // on page load
+    document.addEventListener('DOMContentLoaded', function () {
+     $('#openModalCenter').modal('show');
+    });
+  </script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+ </head>
+
+ <body>
+  <nav class="navbar bg-body-tertiary bg-dark sticky-top">
+   <div class="container-fluid pl-0 pr-0">
+    <div>
+      <button type="button" id="sidebarCollapse" class="btn text-white pl-0">
+        <i class="fa fa-bars text-warning"></i>
+        <span class="sr-only">Toggle Menu</span>
+      </button>
+     <!-- <button type="button" id="sidebarCollapse" class="btn text-white pl-0">
+      <i class="fa fa-bars text-warning"></i>
+      <span class="sr-only">Toggle Menu</span>
+     </button> -->
+     <a class="navbar-brand" href="{{ url_for('users.user_dash')}}">
+      <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="d-inline-block align-text-top img-fluid"
+              width="150rem" height="50rem"
+              style=""
+            />
+     </a>
+    </div>
+    <div class="text-white">
+     <span class="mr-2 mr-md-3 text-warning"
+      ><i class="fa fa-bell" aria-hidden="true"></i
+     ></span>
+     <span class="mr-2 mr-md-3 text-warning"
+      ><i class="fa fa-envelope" aria-hidden="true"></i
+     ></span>
+     <span id="logout">
+      <a href="{{ url_for('auth.logout') }}" class="text-white text-decoration-none">Logout</a>
+     </span>
+    </div>
+    {% if current_user.message and current_user.show_message %}
+    <marquee
+     class="text-warning font-italic"
+     behavior="scroll"
+     direction="left"
+     > {{ current_user.message }} </marquee
+    >
+    {% endif %}
+   </div>
+  </nav>
+  <!-- <div
+   class="tradingview-widget-container bg-dark py-0 my-0"
+   style="display: flex; min-height: 10vh; width: 50%"
+  > -->
+
+ <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container bg-dark py-0 my-0" style="display: flex; min-height: 5vh; width: 50%;">
+
+  <div class="tradingview-widget-container__widget"></div>
+  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/" rel="noopener nofollow" target="_blank"><span class="blue-text"></span></a></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    },
+    {
+      "description": "Solana",
+      "proName": "COINBASE:SOLUSD"
+    },
+    {
+      "description": "Xrp",
+      "proName": "BITSTAMP:XRPUSD"
+    },
+    {
+      "description": "Chain Link",
+      "proName": "COINBASE:LINKUSD"
+    },
+    {
+      "description": "Ada",
+      "proName": "BINANCE:ADAUSD"
+    },
+    {
+      "description": "Matic",
+      "proName": "COINBASE:MATICUSD"
+    },
+    {
+      "description": "Avax",
+      "proName": "BINANCE:AVAXUSD"
+    },
+    {
+      "description": "Litecoin",
+      "proName": "COINBASE:LTCUSD"
+    },
+    {
+      "description": "Dogecoin",
+      "proName": "BINANCE:DOGEUSD"
+    },
+    {
+      "description": "Shiba",
+      "proName": "COINBASE:SHIBUSD"
+    },
+    {
+      "description": "Bnb",
+      "proName": "BINANCE:BNBUSD"
+    },
+    {
+      "description": "Cosmos",
+      "proName": "COINBASE:ATOMUSD"
+    },
+    {
+      "description": "Rune",
+      "proName": "BINANCE:RUNEUSD"
+    },
+    {
+      "description": "Xlm",
+      "proName": "BITFINEX:XLMUSD"
+    },
+    {
+      "description": "Fetch",
+      "proName": "COINBASE:FETUSD"
+    },
+    {
+      "description": "Cake",
+      "proName": "BINANCE:CAKEUSD"
+    },
+    {
+      "description": "Floki",
+      "proName": "BITFINEX:FLOKIUSD"
+    },
+    {
+      "description": "Arbitrum",
+      "proName": "COINBASE:ARBUSD"
+    },
+    {
+      "description": "Aave",
+      "proName": "BINANCE:AAVEUSD"
+    }
+  ],
+  "showSymbolLogo": true,
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "locale": "en"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+
+  <!-- Modal on page load -->
+  <div
+   class="modal col-12"
+   id="openModalCenter"
+   tabindex="-1"
+   role="dialog"
+   aria-labelledby="exampleModalCenterTitle"
+   aria-hidden="true"
+   data-backdrop="static"
+  >
+   <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+     <div class="modal-header">
+      <div class="modal-body text-left py-0 my-0">
+       <h6 class="mt-3">
+        <span id="pageLoadDate">Saturday, November 25, 2024</span>
+       </h6>
+       <h6>Subject: Welcome to noviaxchangeinvest Managers</h6>
+
+       <h6>From: support@noviaxchangeinvest.com</h6>
+
+       <h6>Dear Investor,</h6>
+       <p class="justify-content-evenly">
+        We extend a warm welcome to noviaxchangeinvest Managers, where your
+        investment experience is our priority. Our commitment goes beyond
+        ensuring an optimal and profitable mining/investment portfolio; we also
+        provide robust security measures to protect your investment from online
+        threats. Placing your requirements at the forefront, we empower you with
+        complete access to your investment portfolio.
+       </p>
+
+       <p>
+
+       <p class="py-0 my-0 mb-2">
+        Congratulations on successful registration with noviaxchangeinvest Managers.
+       </p>
+       <p />
+       Thank you for choosing us as your prefered investment partner!<br />Should
+       you have any inquiries, please do not hesitate to contact us &nbsp;
+       <i class="fa fa-envelope"></i> support@noviaxchangeinvest.com.
+       <p />
+
+       <p class="mb-0">
+        Best regards,<br />
+        noviaxchange Team
+       </p>
+      </div>
+      <button
+       type="button"
+       class="close"
+       id="closeModalButton"
+       data-dismiss="modal"
+       aria-label="Close"
+      >
+       <span aria-hidden="true"></span>
+      </button>
+     </div>
+    </div>
+   </div>
+  </div>
+
+  <div class="wrapper d-flex align-items-stretch">
+  <nav id="sidebar">
+   <div class="custom-menu"></div>
+   <div class="p-4">
+    <ul class="list-unstyled components">
+     <li class="active">
+      <i class="fa fa-user-circle mr-3 text-warning"></i>
+     </li>
+     <li class="active pt-0 mt-0">
+      <h6 class="pb-0 mb-0 pt-3" style="font-size: 13px; display: block" id="username">
+        {{ current_user.fullname.title() }}
+      </h6>
+      <h6 class="py-0 mt-0 text-success" style="font-size: 13px">
+       <i class="fa fa-circle"></i> Active
+      </h6>
+     </li>
+     <li class="active pt-2">
+      <a href="{{ url_for('users.user_dash') }}"
+       ><i class="fa fa-home mr-3 text-warning"></i> User Dashboard</a
+      >
+     </li>
+     <li class="pt-3">
+      <a href="{{ url_for('users.add_funds') }}"
+       ><i class="fa fa-btc mr-3 text-warning"></i> Deposit</a
+      >
+     </li>
+     <li class="pt-3">
+      <a href="{{ url_for('users.withdrawal') }}"
+       ><i class="fa fa-money mr-3 text-warning"></i> Withdrawal</a
+      >
+     </li>
+     <li class="pt-3">
+      <a
+       href="#"
+       data-toggle="dropdown"
+       aria-haspopup="true"
+       aria-expanded="false"
+       ><i class="fa fa-gears mr-3 text-warning"></i> Settings
+       <i class="fa fa-caret-down"></i>
+      </a>
+      <div class="dropdown-menu text-light bg-dark border border-warning">
+       <a class="dropdown-item bg-dark px-3" href="{{ url_for('users.profile_page') }}"
+        >Update Profile</a
+       >
+       <!-- <a class="dropdown-item bg-dark px-3" href="./change-password.html"
+        >Change Password</a
+       > -->
+       <a class="dropdown-item bg-dark px-3" href="{{ url_for('users.update_mobile') }}"
+        >Update Credentials</a
+       >
+      </div>
+     </li>
+
+    </ul>
+   </div>
+  </nav>
+
+  <!-- main Content  -->
+  <div id="content" class="mt-0 pt-0" style="height: 200vh">
+   <div class="container pt-3 pt-md-4">
+    <!-- set current date -->
+    <!-- <div class="row col-12"> -->
+     <div class="d-flex ml-3 ml-md-4 mr-3 mr-md-1 mb-2">
+      <h6 id="dashboardTitle">Dashboard</h6>
+      <h6 class="ml-auto">
+       <span id="datePlaceholder">Saturday, March 25, 2024</span>
+      </h6>
+     </div>
+    <div class="d-md-flex col-12 pl-md-4 mt-0 mt-md-2">
+     <!-- card 1 -->
+     <div
+      class="card col-12 col-md-6 py-0 py-md-2 bg-transparent text-dark mb-4 mb-md-3 mr-md-3 shadow-lg"
+     >
+      <div class="card-header bg-transparent d-flex">
+       <h6 class="text-dark mt-2">Account</h6>
+       <p
+        class="text-center ml-auto round py-0 bg-success text-white px-2 rounded"
+       >
+        <i class="fa fa-btc"></i> Available
+       </p>
+      </div>
+      <div class="card-body pt-2 pt-md-3 pb-2 pb-md-0 text-left">
+       <h6 class="card-title">
+        <strong class="py-0 py-md-2" id="useraccount">$ {{ current_user.amount }}</strong
+        ><br />
+       </h6>
+       <h6 class="card-title text-muted font-weight-lighter">Wallet Balance</h6>
+       <div>
+        <marquee
+         class="text-success small"
+         behavior="scroll"
+         direction="left"
+         >Track your investment and Instantly view your wallet balance</marquee
+        >
+       </div>
+      </div>
+     </div>
+     <!-- card 2 -->
+     <div
+      class="card col-12 col-md-6 d-none d-md-block py-0 py-md-2 bg-transparent shadow-lg text-dark mb-4 mb-md-3"
+     >
+      <div class="card-header bg-transparent d-flex">
+       <h6 class="text-dark mt-2">Profit</h6>
+       <p
+        class="text-center ml-auto round py-0 bg-info text-white px-2 rounded"
+       >
+        <i class="fa fa-percent"></i> Bonus Profit
+       </p>
+      </div>
+      <div class="card-body pt-2 pt-md-3 pb-2 pb-md-0 text-left">
+       <h6 class="card-title">
+        <b id="userPro" class="py-2" style="display: block;" ></b>
+        <!-- for desktop it shows -->
+        $ {{ current_user.bonus_profit }}
+        <br />
+       </h6>
+       <div class="d-flex mb-0">
+        <h6 class="card-title text-muted font-weight-lighter">
+         <strong>Available Bonus Profit</strong>
+        </h6>
+        <h6 class="ml-auto text-success">
+         78% <i class="fa fa-caret-up" aria-hidden="true"></i>
+        </h6>
+       </div>
+      </div>
+      <footer>
+       <marquee
+        class="text-success small"
+        behavior="scroll"
+        direction="left"
+        >Earn more and unlock bonus profits for a rewarding investment with noviaxchange.</marquee
+       >
+      </footer>
+     </div>
+    </div>
+    <div class="d-md-flex col-12 pl-md-4 mt-md-2">
+     <!-- card 3-->
+     <div
+      class="card col-12 col-md-6 py-0 py-md-2 bg-transparent shadow-lg text-dark mb-4 mb-md-3 mr-md-3"
+     >
+      <div class="card-header bg-transparent d-flex">
+       <h6 class="text-dark mt-2">Profit</h6>
+       <p
+        class="d-none d-md-block text-center ml-auto round py-0 bg-danger text-white px-2 rounded"
+       >
+        <i class="fa fa-plus"></i> Net Profit
+       </p>
+       <p
+        class="d-block d-md-none text-center ml-auto round py-0 bg-info text-white px-2 rounded"
+       >
+        <i class="fa fa-percent"></i> Bonus Profit
+       </p>
+      </div>
+
+      <div class="card-body pt-4 pb-0 text-left d-block d-md-block">
+       <div class="d-flex mb-0">
+        <h6 class="card-title">
+         <b id="userPro2" class="py-2" ></b>
+         <b id="userPro3" class="py-2" >$ {{ current_user.net_profit }}</b>
+         <br />
+        </h6>
+        <h6 class="ml-auto">77</h6>
+       </div>
+       <div class="d-flex mb-0">
+        <h6 class="card-title text-muted font-weight-lighter">
+         <strong>Available Bonus Profit</strong>
+        </h6>
+        <h6 class="ml-auto text-success">
+         <i class="fa fa-arrow-up"></i> Rate %
+         <i class="fa fa-caret-up" aria-hidden="true"></i>
+        </h6>
+       </div>
+       <div>
+         <marquee
+       class="text-success small"
+       behavior="scroll"
+       direction="left"
+       >Maximize gains and boost your net profits through strategic investments with  noviaxchange.</marquee
+      >
+
+       </div>
+      </div>
+
+
+     </div>
+     <!-- card 4 -->
+     <div
+      class="card col-12 col-md-6 py-1 py-md-2 bg-transparent shadow-lg text-dark mb-4 mb-md-3"
+     >
+      <div class="card-header bg-transparent d-flex">
+       <h6 class="d-none d-md-block text-dark mt-2">Referrals</h6>
+
+       <h6 class="d-block d-md-none text-dark mt-2">Profit</h6>
+       <p
+        class="d-block d-md-none text-center ml-auto round py-0 bg-danger text-white px-2 rounded"
+       >
+        <i class="fa fa-plus"></i> Net Profit
+       </p>
+      </div>
+
+      <div class="card-body pt-4 pb-0 text-left d-none d-md-block">
+       <div class="d-flex mb-0">
+        <div>
+         <h4 class="card-title text-success">
+          <i class="fa fa-user-plus fa-lg text-success"></i>
+         </h4>
+         <h6 class="py-0 mt-0 text-success" style="font-size: 13px">
+          <i class="fa fa-circle"></i> Active
+         </h6>
+        </div>
+        <h3 class="ml-auto my-0 py-0 text-success font-weight-bold">0</h3>
+       </div>
+       <marquee
+     class="text-success small"
+     behavior="scroll"
+     direction="left"
+     >Grow your rewards with our referral program. Start sharing success today!</marquee
+    >
+      </div>
+
+      <div
+       class="card-body pt-2 pt-md-3 pb-2 pb-md-0 text-left d-block d-md-none"
+      >
+       <div class="d-flex mb-0">
+        <h6 class="card-title">
+         <b id="userNet" style="display: block;"></b>
+         <br />
+        </h6>
+        <h6 class="ml-auto">77</h6>
+       </div>
+       <div class="d-flex mb-0">
+        <h6 class="card-title text-muted font-weight-lighter">
+         <strong>Net Profit</strong>
+        </h6>
+        <h6 class="ml-auto text-success">
+         <i class="fa fa-arrow-up"></i> Rate %
+         <i class="fa fa-caret-up" aria-hidden="true"></i>
+        </h6>
+       </div>
+       <marquee
+     class="text-success small"
+     behavior="scroll"
+     direction="left"
+     >Maximize gains and boost your net profits through strategic investments with  noviaxchange</marquee
+    >
+      </div>
+     </div>
+     <!-- sm -->
+     <div
+      class="card col-12 col-md-6 d-block d-md-none py-1 py-md-4 shadow-lg bg-transparent text-dark mb-4 mb-md-3 mr-md-3"
+     >
+      <div class="card-header bg-transparent d-flex pb-sm-0 py-3">
+       <h6 class="d-block d-md-none text-dark mt-0">Referrals</h6>
+      </div>
+
+      <div
+       class="d-block d-md-none card-body pt-4 pb-0 text-left d-none d-md-block"
+      >
+       <!-- <div class="d-flex mb-0">
+         <h6 class="card-title">
+          <strong class="py-2"><i class="fa fa-dollar"></i> 000.00</strong>
+         </h6>
+         <h6 class="ml-auto">77</h6>
+        </div> -->
+       <div class="d-flex mb-0">
+        <div>
+         <h4 class="card-title text-success">
+          <i class="fa fa-user-plus fa-lg text-success"></i>
+         </h4>
+         <h6 class="py-0 mt-0 text-success" style="font-size: 13px">
+          <i class="fa fa-circle"></i> Active
+         </h6>
+        </div>
+        <h3 class="ml-auto my-0 py-0 text-success font-weight-bold">0</h3>
+       </div>
+       <marquee
+     class="text-success small"
+     behavior="scroll"
+     direction="left"
+     >Grow your rewards with our referral program. Start sharing success today!</marquee
+    >
+      </div>
+
+      <!-- sm ends -->
+     </div>
+    </div>
+    <div class="container">
+      <!-- <div class="row"> -->
+        <div class="mt-3 mt-md-4 ml-0 ml-md-4 ml-lg-5 col-12">
+          <img src="{{ url_for('static', filename='assets/img/mining.gif') }}" alt="minnng chart" class="img-fluid shadow-lg h-25 ml-lg-2" id="chart">
+        </div>
+   </div>
+   <!-- chart ends -->
+  </div>
+
+  {% if alert %}
+  <div class="toast alert_toast align-items-center show fade text-white pr-4 {% if bg_color %} bg-{{bg_color}} {% else %} bg-info {% endif %} border-0 right-0 position-fixed top-0 end-0" role="alert"
+  data-bs-autohide="true" aria-live="polite" aria-atomic="true" data-bs-animation="true" style="z-index: 99; margin-top: 5rem; transform: translateX(100%); transition: transform 0.5s ease-in-out;">
+    <div class="d-flex">
+      <div class="toast-body" style="font-size: 1rem;">
+        {{alert}}
+      </div>
+      <!-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button> -->
+    </div>
+  </div>
+{% endif %}
+
+  <!-- footer -->
+  <footer
+   class="container-fluid bg-dark text-white text-center pt-2 fixed-bottom"
+  >
+   <div class="row align-items-center">
+    <div class="col-md-1 text-md-right">
+     <!-- Google Translate container -->
+     <div id="google_translate_element"></div>
+     <!-- end Google Translate container -->
+    </div>
+
+    <div class="col-sm-12 col-md-11 text-center">
+     <h6>
+      Copyright &copy;
+      <script>
+       document.write(new Date().getFullYear());
+
+      </script>
+      .
+      <a href="www.noviaxchangeinvest.com" target="_blank" class="text-white"
+       >noviaxchangeinvest</a
+      >
+      . All Rights Reserved.
+     </h6>
+    </div>
+   </div>
+  </footer>
+
+  <script>
+    // Function to open the sidebar
+    function openSidebar() {
+      document.getElementById("sidebar").classList.add("active");
+      document.getElementById("content").classList.add("active");
+    }
+
+    // Function to close the sidebar
+    function closeSidebar() {
+      document.getElementById("sidebar").classList.remove("active");
+      document.getElementById("content").classList.remove("active");
+    }
+
+    // Add event listener to the hamburger menu button
+    document.getElementById("sidebarCollapse").addEventListener("click", function() {
+      // Check if the sidebar is already open or closed
+      if (document.getElementById("sidebar").classList.contains("active")) {
+        // If it's open, close it
+        closeSidebar();
+      } else {
+        // If it's closed, open it
+        openSidebar();
+      }
+    });
+  </script>
+  <!-- Toastr Notifications - EXTERNAL JS -->
+  <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    ></script>
+
+  <!-- NOTIFICATIONS CONTAINER - JS -->
+
+  <script type="text/javascript">
+   toastr.options = {
+    closeButton: true,
+    debug: true,
+    newestOnTop: true,
+    progressBar: true,
+    positionClass: 'toast-bottom-left',
+    preventDuplicates: true,
+    showDuration: '3000',
+    hideDuration: '500',
+    timeOut: '3500',
+    extendedTimeOut: '1500',
+    showEasing: 'swing',
+    hideEasing: 'linear',
+    showMethod: 'fadeIn',
+    hideMethod: 'fadeOut',
+   };
+
+   setInterval(() => {
+    $.ajax({
+     url: 'https://randomuser.me/api/',
+     dataType: 'json',
+     success: function (data) {
+      action = ['deposited ', 'deposited ', 'withdrew ', ' invested '];
+      amt = [
+       '$5500',
+       '$7500',
+       '$8,000',
+       '$1,500',
+       '$5,000',
+       '$1,500',
+       '$2,070',
+       '$3,030',
+       '$5,500',
+       '$9000',
+       '$650',
+       '4,500',
+      ];
+      toastr.success(
+       data.results[0].name.first +
+        ' ' +
+        data.results[0].name.last +
+        ' ' +
+        action[Math.floor(Math.random() * 3)] +
+        ' ' +
+        amt[Math.floor(Math.random() * 10)]
+      );
+      console.log(data.results[0].name.first);
+     },
+    });
+   }, 2000);
+  </script>
+
+  <script type="text/javascript">
+   const usernamex = [
+    'Sam Courtright ',
+    'Evia Boster',
+    'Leopoldo Alexis ',
+    'Laure Mccrory',
+    'Jana Radel ',
+    'Brunilda Macon ',
+    'Bula Pries ',
+    'Cassidy Rudnick',
+    'Hiram Kilburn  ',
+    'Latrisha Greenly',
+    'Loyd Sadowski ',
+    'Audrey Lindstedt ',
+    'Gisela Chewning',
+    'Katie Rosenstein',
+    'Lorinda Lex  ',
+    'Carie Schreiber',
+    'Ethel Vanatta ',
+    'Carli Spraggs ',
+    'Vivien Basil  ',
+    'Moshe Bogardus ',
+   ];
+  </script>
+
+  <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+  <script type="text/javascript">
+   function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+     { pageLanguage: 'en' },
+     'google_translate_element'
+    );
+   }
+  </script>
+
+  <script
+   type="text/javascript"
+   src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+  ></script>
+  <!-- Toastr Notifications - EXTERNAL JS -->
+  <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    ></script>
+
+  <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/popper.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+  <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+  <script>
+    const username = document.getElementById('username')
+    const userAccount = document.getElementById('useraccount');
+    const userNet = document.getElementById('userNet')
+    const userPro = document.getElementById('userPro')
+    const user = document.getElementById('userPro2')
+    const user1 = document.getElementById('userPro3')
+    const logout = document.getElementById('logout')
+    const userData = JSON.parse(localStorage.getItem('userData'));
+
+    // Check if user data exists and has a name property
+    if (userData.user.name) {
+      // Get the input field by its id
+
+      // Set the value of the input field to the user's name
+      username.textContent = userData.user.name;
+    } else {
+      // Handle the case where user data or the name property is not available
+      console.error('User data or name not found in local storage');
+      window.location.href = '../index.html'
+    }
+    const userId = userData.user.id;
+
+    const id = userId;
+
+    // Define the URL for the API endpoint with the user ID
+    const apiUrl = `https://noviaxchangeinvest.com/public/api/users/${id}`;
+
+// Make a GET request to the API
+    fetch(apiUrl, {
+      method: 'GET',
+      headers: {
+      "Content-Type": "application/json",
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+    // Handle the data from the API
+    console.log('API response:', data);
+    userAccount.textContent = '$' + JSON.stringify(data.user.Account_wallet);
+    userPro.append(`$ ${JSON.stringify(data.user.Bonus_Profits)}`)
+    userNet.append(`$ ${JSON.stringify(data.user.Net_Profits)}`)
+    if (window.innerWidth < 840) {
+    user.textContent = `$ ${data.user.Bonus_Profits}`;
+    user1.textContent = ""; // Clear the content of user1 element
+} else {
+    user.textContent = `$ ${data.user.Net_Profits}`;
+    user1.textContent = ""; // Clear the content of user1 element
+}
+
+  })
+  .catch(error => {
+    // Handle errors
+    console.error('Error fetching API:', error);
+  });
+  logout.addEventListener('click', ()=>{
+    const token = userData.token
+    const url = 'https://noviaxchangeinvest.com/public/api/logout'
+
+
+    const xhr = new XMLHttpRequest();
+
+            // Configure it: POST-request, endpoint URL
+            xhr.open('POST', url, true);
+            const postData = {
+                // key: 'value',
+            };
+            // Set the request headers
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.setRequestHeader('Authorization', 'Bearer ' + token);
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Request was successful
+                        console.log(xhr.responseText);
+                        // Check if the key exists in localStorage
+                        if (localStorage.getItem("userData")) {
+                          // Delete the item with the specified key
+                          localStorage.removeItem('userData');
+                          alert('Logged out successfullly!');
+                          // const newPath = "index.html"; // Change to the path of your success page
+                          // window.history.pushState({}, "", newPath);
+                          window.location.href = '../index.html'
+                        } else {
+                          alert('Error in performing Action.');
+            }
+                    } else {
+                        // There was an error
+                        console.error('Error making POST request. Status:', xhr.status);
+                        alert('Error in performing Action.');
+                    }
+                }
+            }
+
+            // xhr.send()
+            xhr.send(JSON.stringify(postData));
+          })
+  </script>
+
+<script>
+  var myToast = new bootstrap.Toast(document.querySelector('.alert_toast'));
+
+  document.querySelector('.alert_toast').style.transform = 'translateX(-0%)';
+
+  setTimeout(function() {
+      // fade the toast away
+      document.querySelector('.alert_toast').style.transition = '4s ease-in-out';
+      myToast.hide();
+  }, 1000);
+  </script>
+
+ </body>
+</html>

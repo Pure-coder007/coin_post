@@ -1,0 +1,1009 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Novia Xchange Invest DevOps" />
+
+    <meta
+      name="keywords"
+      content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Sign Up | noviaxchangeinvest.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  </head>
+
+  <body style="color: #000">
+    <!-- start per-loader -->
+    <!-- <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div> -->
+    <!-- end per-loader -->
+
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+  <div class="main-menu-header py-3">
+      <div class="container">
+          <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+              <div class="row align-items-center">
+                  <div class="col-lg-2">
+                      <a href="{{ url_for('users.index')}}" class="main-logo">
+                          <img
+                          src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+                          alt="Logo"
+                          class="sticky-logo-hide"
+                          width="150rem" height="30rem"
+                          style=""
+                        />
+
+                        <img
+                        src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+                        alt="logo"
+                        class="sticky-logo-show"
+                        width="150rem" height="30rem"
+                      />
+<!--                          <img class="sticky-logo-hide" src="{{ url_for('static', filename='imagess/logo-white.png')}}" alt="logo">-->
+                          <!-- <img class="sticky-logo-show" src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo"> -->
+                      </a>
+                  </div><!-- end col-lg-2 -->
+                  <div class="col-lg-10">
+                      <div class="main-navbar d-flex align-items-center justify-content-between">
+                          <nav class="main-nav main-nav-white text-capitalize main-nav-2">
+                              <ul>
+                                  <li>
+                                      <a href="#">home <i class="fa fa-angle-down font-size-12" ></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                    <li><a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="has-mega-menu">
+                                      <a href="#"> Menu <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <div class="drop-menu mega-menu">
+                                          <ul class="row no-gutters">
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                                                      <li><a href="{{ url_for('users.service')}}">services</a></li>
+                          <li><a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services</a></li>
+                          <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                                                      <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                                                  </ul>
+                                              </li>
+                                              <li class="mega-menu-item col-lg-4">
+                                                  <ul>
+                                                      <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                                                      <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                                                     <li><a href="{{ url_for('auth.reset_password')}}"> Reset password</a></li>
+                                                  </ul>
+                                              </li>
+                                          </ul>
+                                      </div>
+                                  </li>
+                                  <li>
+                                      <a href="#">team <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                                      </ul>
+                                  </li>
+                                  <li>
+                                      <a href="#">blog <i class="fa fa-angle-down font-size-12"></i></a>
+                                      <ul class="drop-menu">
+                                          <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </nav>
+                          <div class="navbar-toolbar d-flex align-items-center">
+                              <ul class="list-items list-items-white">
+                                  <li class="d-inline-block mr-2"><a href="{{ url_for('auth.login')}}"> Login </a></li>
+                                  <li class="d-inline-block card hover-y" style="background: orange !important; border-radius: 50px;"><a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                Sign Up </a></li>
+                              </ul>
+                              <div class="hamburger hamburger-white">
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                                  <span class="line"></span>
+                              </div>
+                          </div><!-- end navbar-toolbar -->
+                      </div><!-- end main-navbar -->
+                  </div><!-- end col-lg-10 -->
+              </div><!-- end row -->
+          </div><!-- end main-menu-wrapper -->
+      </div> <!-- end container -->
+  </div><!-- end main-menu-header -->
+</header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <h2 class="sec-title text-white my-2">Sign Up</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#">Home</a></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+              <li class="breadcrumb-item active" aria-current="page">
+                Sign Up
+              </li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START CONTACT AREA
+================================= -->
+    <section class="contact-area section--padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="card hover-y">
+              <div class="card-body media">
+                <div
+                  class="icon-element text-color fancy-radius mr-4 flex-shrink-0"
+                >
+                  <i class="fa fa-user-lock"></i>
+                </div>
+                <div class="media-body">
+                  <h4 class="card-title mb-2">Trusted, Fast and Convenient</h4>
+                  <p class="card-desc">
+                    Platform is reliable, offers quick transaction processing,
+                    and provides an easy and user-friendly experience for
+                    investors.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+            <div class="card hover-y">
+              <div class="card-body media">
+                <div
+                  class="icon-element text-color fancy-radius mr-4 flex-shrink-0"
+                >
+                  <i class="fa fa-mobile"></i>
+                </div>
+                <div class="media-body">
+                  <h4 class="card-title mb-2">Secure Transactions</h4>
+                  <p class="card-desc">
+                    Robust encryption, authentication, and monitoring measures
+                    to safeguard users' digital investments and personal
+                    information to foster trust and confidence from investors.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+            <div class="card hover-y">
+              <div class="card-body media">
+                <div
+                  class="icon-element text-color fancy-radius mr-4 flex-shrink-0"
+                >
+                  <i class="fa fa-wallet"></i>
+                </div>
+                <div class="media-body">
+                  <h4 class="card-title mb-2">No Limits on Exchange</h4>
+                  <p class="card-desc">
+                    Individuals or entities have freedom to convert or trade
+                    their assets without predefined boundaries or limitations.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+            <div class="card hover-y">
+              <div class="card-body media">
+                <div
+                  class="icon-element text-color fancy-radius mr-4 flex-shrink-0"
+                >
+                  <i class="fa fa-money-bill-wave"></i>
+                </div>
+                <div class="media-body">
+                  <h4 class="card-title mb-2">Swift Payment Method</h4>
+                  <p class="card-desc">
+                    Facilitates secure and efficient cross-border cryptocurrency
+                    transactions between cryptocurrency exchanges and financial
+                    institutions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <!-- end card -->
+          </div>
+          <!-- end col-lg-6 -->
+
+          <div class="col-lg-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="text-center">
+                  <h3
+                    class="font-weight-bold mb-1"
+                    style="color: orange !important"
+                  >
+                    Create a free account
+                  </h3>
+                  <p class="font-size-15">
+                    Open an investment account and invest your
+                    <span class="text-success"
+                      ><i class="#"></i> bitcoins
+                    </span>
+                    today!!!
+                  </p>
+                </div>
+                <hr class="border-top-gray my-4" />
+                <form id="" action="" method="post">
+                  <!-- Full Name -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="text"
+                      name="name"
+                      value="{{name}}"
+                      placeholder="Full name"
+                      required
+                    />
+                  </div>
+                  <!-- End of Full Name -->
+
+                  <!-- Email Address -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="email"
+                      name="email"
+                      value="{{email}}"
+                      placeholder="Email address"
+                      required
+                    />
+                  </div>
+                  <!-- End of Email Address -->
+
+                  <!-- Mobile Number -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="number"
+                      name="mobile_no"
+                      value="{{mobile_no}}"
+                      placeholder="Mobile Number"
+                      required
+                    />
+                  </div>
+                  <!-- End of Mobile Number -->
+
+                  <!-- Date of Birth -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="date"
+                      name="DOB"
+                      value="{{DOB}}"
+                      placeholder="dd-mm-yyyy"
+                      required
+                    />
+                  </div>
+                  <!-- End of Date of Birth -->
+
+                  <!-- Residential Address -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="text"
+                      name="Residential_address"
+                      value="{{Residential_address}}"
+                      placeholder="Residential Address"
+                      required
+                    />
+                  </div>
+                  <!-- End of Residential Address -->
+
+                  <!-- Occupation -->
+                  <div class="form-group">
+                    <input
+                      class="form-control form--control"
+                      type="text"
+                      name="Occupation"
+                      value="{{Occupation}}"
+                      placeholder="Occupation"
+                      required
+                    />
+                  </div>
+                  <!-- End of Occupation -->
+
+                  <!-- Country-->
+                  <div class="form-group">
+                    <select
+                      name="Country"
+                      class="form-control form--control"
+                      required
+                      id="countrySelect"
+                    >
+                      <option value="Afghanistan">Afghanistan</option>
+                      <option value="Albania">Albania</option>
+                      <option value="Algeria">Algeria</option>
+                      <option value="Andorra">Andorra</option>
+                      <option value="Angola">Angola</option>
+                      <option value="Antigua and Barbuda">
+                        Antigua and Barbuda
+                      </option>
+                      <option value="Argentina">Argentina</option>
+                      <option value="Armenia">Armenia</option>
+                      <option value="Australia">Australia</option>
+                      <option value="Austria">Austria</option>
+                      <option value="Azerbaijan">Azerbaijan</option>
+                      <option value="Bahamas">Bahamas</option>
+                      <option value="Bahrain">Bahrain</option>
+                      <option value="Bangladesh">Bangladesh</option>
+                      <option value="Barbados">Barbados</option>
+                      <option value="Belarus">Belarus</option>
+                      <option value="Belgium">Belgium</option>
+                      <option value="Belize">Belize</option>
+                      <option value="Benin">Benin</option>
+                      <option value="Bhutan">Bhutan</option>
+                      <option value="Bolivia">Bolivia</option>
+                      <option value="Bosnia and Herzegovina">
+                        Bosnia and Herzegovina
+                      </option>
+                      <option value="Botswana">Botswana</option>
+                      <option value="Brazil">Brazil</option>
+                      <option value="Brunei">Brunei</option>
+                      <option value="Bulgaria">Bulgaria</option>
+                      <option value="Burkina Faso">Burkina Faso</option>
+                      <option value="Burundi">Burundi</option>
+                      <option value="Cabo Verde">Cabo Verde</option>
+                      <option value="Cambodia">Cambodia</option>
+                      <option value="Cameroon">Cameroon</option>
+                      <option value="Canada">Canada</option>
+                      <option value="Central African Republic">
+                        Central African Republic
+                      </option>
+                      <option value="Chad">Chad</option>
+                      <option value="Chile">Chile</option>
+                      <option value="China">China</option>
+                      <option value="Colombia">Colombia</option>
+                      <option value="Comoros">Comoros</option>
+                      <option value="Congo (Congo-Brazzaville)">
+                        Congo (Congo-Brazzaville)
+                      </option>
+                      <option value="Costa Rica">Costa Rica</option>
+                      <option value="Croatia">Croatia</option>
+                      <option value="Cuba">Cuba</option>
+                      <option value="Cyprus">Cyprus</option>
+                      <option value="Czechia (Czech Republic)">
+                        Czechia (Czech Republic)
+                      </option>
+                      <option value="Denmark">Denmark</option>
+                      <option value="Djibouti">Djibouti</option>
+                      <option value="Dominica">Dominica</option>
+                      <option value="Dominican Republic">
+                        Dominican Republic
+                      </option>
+                      <option value="Ecuador">Ecuador</option>
+                      <option value="Egypt">Egypt</option>
+                      <option value="El Salvador">El Salvador</option>
+                      <option value="Equatorial Guinea">
+                        Equatorial Guinea
+                      </option>
+                      <option value="Eritrea">Eritrea</option>
+                      <option value="Estonia">Estonia</option>
+                      <option value="Eswatini (fmr. 'Swaziland')">
+                        Eswatini (fmr. "Swaziland")
+                      </option>
+                      <option value="Ethiopia">Ethiopia</option>
+                      <option value="Fiji">Fiji</option>
+                      <option value="Finland">Finland</option>
+                      <option value="France">France</option>
+                      <option value="Gabon">Gabon</option>
+                      <option value="Gambia">Gambia</option>
+                      <option value="Georgia">Georgia</option>
+                      <option value="Germany">Germany</option>
+                      <option value="Ghana">Ghana</option>
+                      <option value="Greece">Greece</option>
+                      <option value="Grenada">Grenada</option>
+                      <option value="Guatemala">Guatemala</option>
+                      <option value="Guinea">Guinea</option>
+                      <option value="Guinea-Bissau">Guinea-Bissau</option>
+                      <option value="Guyana">Guyana</option>
+                      <option value="Haiti">Haiti</option>
+                      <option value="Holy See">Holy See</option>
+                      <option value="Honduras">Honduras</option>
+                      <option value="Hungary">Hungary</option>
+                      <option value="Iceland">Iceland</option>
+                      <option value="India">India</option>
+                      <option value="Indonesia">Indonesia</option>
+                      <option value="Iran">Iran</option>
+                      <option value="Iraq">Iraq</option>
+                      <option value="Ireland">Ireland</option>
+                      <option value="Israel">Israel</option>
+                      <option value="Italy">Italy</option>
+                      <option value="Jamaica">Jamaica</option>
+                      <option value="Japan">Japan</option>
+                      <option value="Jordan">Jordan</option>
+                      <option value="Kazakhstan">Kazakhstan</option>
+                      <option value="Kenya">Kenya</option>
+                      <option value="Kiribati">Kiribati</option>
+                      <option value="Kuwait">Kuwait</option>
+                      <option value="Kyrgyzstan">Kyrgyzstan</option>
+                      <option value="Laos">Laos</option>
+                      <option value="Latvia">Latvia</option>
+                      <option value="Lebanon">Lebanon</option>
+                      <option value="Lesotho">Lesotho</option>
+                      <option value="Liberia">Liberia</option>
+                      <option value="Libya">Libya</option>
+                      <option value="Liechtenstein">Liechtenstein</option>
+                      <option value="Lithuania">Lithuania</option>
+                      <option value="Luxembourg">Luxembourg</option>
+                      <option value="Madagascar">Madagascar</option>
+                      <option value="Malawi">Malawi</option>
+                      <option value="Malaysia">Malaysia</option>
+                      <option value="Maldives">Maldives</option>
+                      <option value="Mali">Mali</option>
+                      <option value="Malta">Malta</option>
+                      <option value="Marshall Islands">Marshall Islands</option>
+                      <option value="Mauritania">Mauritania</option>
+                      <option value="Mauritius">Mauritius</option>
+                      <option value="Mexico">Mexico</option>
+                      <option value="Micronesia">Micronesia</option>
+                      <option value="Moldova">Moldova</option>
+                      <option value="Monaco">Monaco</option>
+                      <option value="Mongolia">Mongolia</option>
+                      <option value="Montenegro">Montenegro</option>
+                      <option value="Morocco">Morocco</option>
+                      <option value="Mozambique">Mozambique</option>
+                      <option value="Myanmar">Myanmar</option>
+                      <option value="Namibia">Namibia</option>
+                      <option value="Nauru">Nauru</option>
+                      <option value="Nepal">Nepal</option>
+                      <option value="Netherlands">Netherlands</option>
+                      <option value="New Zealand">New Zealand</option>
+                      <option value="Nicaragua">Nicaragua</option>
+                      <option value="Niger">Niger</option>
+                      <option value="Nigeria">Nigeria</option>
+                      <option value="North Korea">North Korea</option>
+                      <option value="North Macedonia">North Macedonia</option>
+                      <option value="Norway">Norway</option>
+                      <option value="Oman">Oman</option>
+                      <option value="Pakistan">Pakistan</option>
+                      <option value="Palau">Palau</option>
+                      <option value="Palestine State">Palestine State</option>
+                      <option value="Panama">Panama</option>
+                      <option value="Papua New Guinea">Papua New Guinea</option>
+                      <option value="Paraguay">Paraguay</option>
+                      <option value="Peru">Peru</option>
+                      <option value="Philippines">Philippines</option>
+                      <option value="Poland">Poland</option>
+                      <option value="Portugal">Portugal</option>
+                      <option value="Qatar">Qatar</option>
+                      <option value="Romania">Romania</option>
+                      <option value="Russia">Russia</option>
+                      <option value="Rwanda">Rwanda</option>
+                      <option value="Saint Kitts and Nevis">
+                        Saint Kitts and Nevis
+                      </option>
+                      <option value="Saint Lucia">Saint Lucia</option>
+                      <option value="Saint Vincent and the Grenadines">
+                        Saint Vincent and the Grenadines
+                      </option>
+                      <option value="Samoa">Samoa</option>
+                      <option value="San Marino">San Marino</option>
+                      <option value="Sao Tome and Principe">
+                        Sao Tome and Principe
+                      </option>
+                      <option value="Saudi Arabia">Saudi Arabia</option>
+                      <option value="Senegal">Senegal</option>
+                      <option value="Serbia">Serbia</option>
+                      <option value="Seychelles">Seychelles</option>
+                      <option value="Sierra Leone">Sierra Leone</option>
+                      <option value="Singapore">Singapore</option>
+                      <option value="Slovakia">Slovakia</option>
+                      <option value="Slovenia">Slovenia</option>
+                      <option value="Solomon Islands">Solomon Islands</option>
+                      <option value="Somalia">Somalia</option>
+                      <option value="South Africa">South Africa</option>
+                      <option value="South Korea">South Korea</option>
+                      <option value="South Sudan">South Sudan</option>
+                      <option value="Spain">Spain</option>
+                      <option value="Sri Lanka">Sri Lanka</option>
+                      <option value="Sudan">Sudan</option>
+                      <option value="Suriname">Suriname</option>
+                      <option value="Sweden">Sweden</option>
+                      <option value="Switzerland">Switzerland</option>
+                      <option value="Syria">Syria</option>
+                      <option value="Tajikistan">Tajikistan</option>
+                      <option value="Tanzania">Tanzania</option>
+                      <option value="Thailand">Thailand</option>
+                      <option value="Timor-Leste">Timor-Leste</option>
+                      <option value="Togo">Togo</option>
+                      <option value="Tonga">Tonga</option>
+                      <option value="Trinidad and Tobago">
+                        Trinidad and Tobago
+                      </option>
+                      <option value="Tunisia">Tunisia</option>
+                      <option value="Turkey">Turkey</option>
+                      <option value="Turkmenistan">Turkmenistan</option>
+                      <option value="Tuvalu">Tuvalu</option>
+                      <option value="Uganda">Uganda</option>
+                      <option value="Ukraine">Ukraine</option>
+                      <option value="United Arab Emirates">
+                        United Arab Emirates
+                      </option>
+                      <option value="United Kingdom">United Kingdom</option>
+                      <option value="United States of America">
+                        United States of America
+                      </option>
+                      <option value="Uruguay">Uruguay</option>
+                      <option value="Uzbekistan">Uzbekistan</option>
+                      <option value="Vanuatu">Vanuatu</option>
+                      <option value="Venezuela">Venezuela</option>
+                      <option value="Vietnam">Vietnam</option>
+                      <option value="Yemen">Yemen</option>
+                      <option value="Zambia">Zambia</option>
+                      <option value="Zimbabwe">Zimbabwe</option>
+                    </select>
+                  </div>
+                  <!-- End of Country-->
+
+                  <!-- Password -->
+                  <div class="form-group">
+                    <div class="position-relative">
+                      <input
+                        class="form-control form--control password-field"
+                        type="password"
+                        name="password"
+                        value="{{ password}}"
+                        placeholder="Password"
+                        required
+                      />
+                      <a
+                        href="javascript:void(0)"
+                        class="position-absolute top-0 right-0 h-100 btn toggle-password"
+                        title="Toggle show/hide password"
+                      >
+                        <i class="far fa-eye eye-on"></i>
+                        <i class="far fa-eye-slash eye-off"></i>
+                      </a>
+                    </div>
+                    <small class="form-text">
+                      *Minimum 8 characters *At least 1 UPPER CASE *At least 1
+                      number
+                    </small>
+                  </div>
+                  <!-- End of Password -->
+
+                  <div class="form-group">
+                    <div class="custom-control custom-checkbox">
+                      <input
+                        type="checkbox"
+                        class="custom-control-input"
+                        name="policy"
+                        id="register-policy"
+                      />
+                      <label
+                        class="custom-control-label font-weight-normal"
+                        for="register-policy"
+                      >
+                        I agree to the
+                        <a href="{{ url_for('users.terms_of_service') }}" class="btn-link">
+                          terms of services
+                        </a></label
+                      >
+                    </div>
+                  </div>
+                  <!-- end form-group -->
+
+                  <button class="btn btn-primary w-100" type="submit" id="btn">
+                    Create an Account
+                  </button>
+                </form>
+                <p class="font-size-14 pt-2 text-center font-weight-normal">
+                  Already have an account?
+                  <a href="{{ url_for('auth.login') }}" class="text-color btn-link">Login</a>
+                </p>
+                <hr class="border-top-gray my-4" />
+                <div class="text-center">
+                  <span class="icon-element icon-element-md"> OR </span>
+                  <p class="font-size-15 py-3 font-weight-normal">
+                    Sign up with your Social network.
+                  </p>
+                  <div class="social-signup">
+                    <a href="#" class="btn btn-sm btn-light mx-1"
+                      ><i class="fab fa-google mr-2"></i> Google</a
+                    >
+                    <a href="#" class="btn btn-sm btn-light mx-1"
+                      ><i class="fab fa-facebook-f mr-2"></i> Facebook</a
+                    >
+                    <a href="#" class="btn btn-sm btn-light mx-1"
+                      ><i class="fab fa-twitter mr-2"></i> Twitter</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end col-lg-6 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end contact-area -->
+    <!-- ================================
+     START CONTACT AREA
+================================= -->
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+<section class="footer-area padding-top-80px pb-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <a href="{{ url_for('users.index')}}" class="d-block">
+                      <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo">
+                  </a>
+                  <ul class="list-items pt-4">
+                      <li class="mb-3"><a href=""><i class="fa fa-envelope mr-1 font-size-14"></i>
+             hello@noviaxchangeinvest.com </a></li>
+                      <li class="mb-3"><i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+              President Building, <br/> 37b Av. John F. Kennedy, <br/> 1855 Kirchberg, <br/> Luxembourg </li>
+                      <li class="mb-3"><i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun </li>
+                  </ul>
+                  <div class="social-icons">
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+                      <li class="mb-2"><a href="{{url_for('users.investment_plan')}}"> Investment Plan </a></li>
+
+                      <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="#">Guide</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+                      <li class="mb-2"><a href="#">Advertise</a></li>
+                      <li class="mb-2"><a href="#">Help Center</a></li>
+                      <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+
+      </div><!-- end row -->
+  </div><!-- end container -->
+  <hr class="border-top-gray my-4">
+
+  <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <!-- Google Translate container -->
+    <div id="google_translate_element"></div>
+    <!-- end Google Translate container -->
+
+          <p class="copy-desc" style="color: #000 !important;">Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+        <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> | <a href="{{ url_for('users.faq')}}"> FAQ </a>
+    </p>
+
+    <div>
+    <a href="https://www.cssf.lu/en/">
+    <img src="{{ url_for('static', filename='imagess/cssf.png')}}" alt="" class="img-fluid mr-3 flex-shrink-0" style="width: 100px;">
+    </a>
+    </div>
+      </div><!-- end copyright-content -->
+  </div><!-- end container -->
+
+
+  {% if alert %}
+  <div class="toast alert_toast align-items-center show fade text-white pr-4 {% if bg_color %} bg-{{bg_color}} {% else %} bg-info {% endif %} border-0 right-0 position-fixed top-0 end-0" role="alert"
+  data-bs-autohide="true" aria-live="polite" aria-atomic="true" data-bs-animation="true" style="z-index: 99; margin-top: 5rem; transform: translateX(100%); transition: transform 0.5s ease-in-out;">
+    <div class="d-flex">
+      <div class="toast-body" style="font-size: 1rem;">
+        {{alert}}
+      </div>
+      <!-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button> -->
+    </div>
+  </div>
+{% endif %}
+
+
+</section><!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="far fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <!-- end counter js -->
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+    <!-- Toastr Notifications - EXTERNAL JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    ></script>
+
+    <!-- NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      toastr.options = {
+        closeButton: true,
+        debug: true,
+        newestOnTop: true,
+        progressBar: true,
+        positionClass: "toast-bottom-left",
+        preventDuplicates: true,
+        showDuration: "3000",
+        hideDuration: "500",
+        timeOut: "3500",
+        extendedTimeOut: "1500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+      };
+
+      setInterval(() => {
+        $.ajax({
+          url: "https://randomuser.me/api/",
+          dataType: "json",
+          success: function (data) {
+            action = ["deposited ", "deposited ", "withdrew ", " invested "];
+            amt = [
+              "$5500",
+              "$7500",
+              "$8,000",
+              "$1,500",
+              "$5,000",
+              "$1,500",
+              "$2,070",
+              "$3,030",
+              "$5,500",
+              "$9000",
+              "$650",
+              "4,500",
+            ];
+            toastr.success(
+              data.results[0].name.first +
+                " " +
+                data.results[0].name.last +
+                " " +
+                action[Math.floor(Math.random() * 3)] +
+                " " +
+                amt[Math.floor(Math.random() * 10)]
+            );
+            console.log(data.results[0].name.first);
+          },
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      const usernamex = [
+        "Sam Courtright ",
+        "Evia Boster",
+        "Leopoldo Alexis ",
+        "Laure Mccrory",
+        "Jana Radel ",
+        "Brunilda Macon ",
+        "Bula Pries ",
+        "Cassidy Rudnick",
+        "Hiram Kilburn  ",
+        "Latrisha Greenly",
+        "Loyd Sadowski ",
+        "Audrey Lindstedt ",
+        "Gisela Chewning",
+        "Katie Rosenstein",
+        "Lorinda Lex  ",
+        "Carie Schreiber",
+        "Ethel Vanatta ",
+        "Carli Spraggs ",
+        "Vivien Basil  ",
+        "Moshe Bogardus ",
+      ];
+    </script>
+
+    <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+
+    <script>
+     const countrySelect = document.querySelector('select[name="Country"]');
+      let Country;
+
+      countrySelect.addEventListener("change", function () {
+        Country = countrySelect.value;
+      });
+document.addEventListener("DOMContentLoaded", function () {
+  // Get a reference to the form element
+  const form = document.getElementById("Myform");
+
+  // Check if the form exists
+  if (form) {
+    // Add submit event listener to the form
+    form.addEventListener("submit", async function (event) {
+      try {
+        event.preventDefault();
+
+        // Get form input values
+        const name = document.getElementsByName("name")[0].value;
+        const mobile_no = document.getElementsByName("mobile_no")[0].value;
+        const password = document.getElementsByName("password")[0].value;
+        const email = document.getElementsByName("email")[0].value;
+        const DOB = document.getElementsByName("DOB")[0].value;
+        const Residential_address = document.getElementsByName(
+          "Residential_address"
+        )[0].value;
+        const Occupation = document.getElementsByName("Occupation")[0].value;
+
+        // Validate form inputs
+        if (!name || !mobile_no || !password || !email || !DOB || !Residential_address || !Occupation || !Country) {
+          alert("All fields are required.");
+        }
+
+        // Validate mobile number format (11 digits)
+        // if (!/^\d{12}$/.test(mobile_no)) {
+        //   alert("Mobile number must be 12 digits.");
+        // }
+
+        // Validate email format
+        if (!/\S+@\S+\.\S+/.test(email)) {
+          alert("Invalid email address.");
+        }
+
+        // Construct data object
+        const data = {
+          name,
+          mobile_no,
+          password,
+          email,
+          DOB,
+          Residential_address,
+          Country,
+          Occupation,
+        };
+
+        // Make fetch request
+        const url = "https://noviaxchangeinvest.com/public/api/register";
+        const response = await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const responseData = await response.json();
+
+        if (responseData) {
+          alert("Registration successful");
+          window.location.href = "../hidden/user.html";
+          console.log(responseData);
+          localStorage.setItem("userData", JSON.stringify(responseData));
+        } else {
+          alert("Registration unsuccessful");
+          console.log("Registration unsuccessful");
+        }
+      } catch (error) {
+        console.error("Error:", error);
+        alert("Registration unsuccessful");
+      }
+    });
+  } else {
+    console.error("Form element with id 'Myform' not found.");
+  }
+});
+</script>
+
+<script>
+  var myToast = new bootstrap.Toast(document.querySelector('.alert_toast'));
+
+  document.querySelector('.alert_toast').style.transform = 'translateX(-0%)';
+
+  setTimeout(function() {
+      // fade the toast away
+      document.querySelector('.alert_toast').style.transition = '4s ease-in-out';
+      myToast.hide();
+  }, 1000);
+  </script>
+
+  </body>
+</html>

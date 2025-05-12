@@ -1,0 +1,948 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <meta name="author" content="Bitnovia Coins DevOps" />
+    <meta
+      name="keywords"
+      content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>FAQ | bitnoviacoinsinvest.com</title>
+
+    <!-- Google tag (gtag.js) for Bitnovia Coins Invest -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHN1RYRFTV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BHN1RYRFTV');
+        </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+
+  <body style="color: #000">
+    <!-- start per-loader -->
+    <!-- <div class="loader-container">
+      <div class="loader-ripple">
+        <div></div>
+        <div></div>
+      </div>
+    </div> -->
+    <!-- end per-loader -->
+
+    <!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+  <div class="main-menu-header py-3">
+    <div class="container">
+      <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+        <div class="row align-items-center">
+          <div class="col-lg-2">
+            <a href="{{ url_for('users.index')}}" class="main-logo">
+                <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="sticky-logo-hide"
+              width="150rem" height="30rem"
+              style=""
+            />
+
+            <img
+            src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+            alt="logo"
+            class="sticky-logo-show"
+            width="150rem" height="30rem"
+          />
+<!--              <img-->
+<!--                class="sticky-logo-hide"-->
+<!--                src="{{ url_for('static', filename='imagess/logo-white.png')}}"-->
+<!--                alt="logo"-->
+<!--              />-->
+              <!-- <img
+                class="sticky-logo-show"
+                src="{{ url_for('static', filename='imagess/logo-black.png')}}"
+                alt="logo"
+              /> -->
+            </a>
+          </div>
+          <!-- end col-lg-2 -->
+          <div class="col-lg-10">
+            <div
+              class="main-navbar d-flex align-items-center justify-content-between"
+            >
+              <nav
+                class="main-nav main-nav-white text-capitalize main-nav-2"
+              >
+                <ul>
+                  <li>
+                    <a href="#"
+                      >home <i class="fa fa-angle-down font-size-12"></i
+                    ></a>
+                    <ul class="drop-menu">
+                      <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                      <li><a href="#">Bonus Profit</a></li>
+                      <li><a href="#">Net Profit</a></li>
+                      <li>
+                        <a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="has-mega-menu">
+                    <a href="#">
+                      Menu <i class="fa fa-angle-down font-size-12"></i
+                    ></a>
+                    <div class="drop-menu mega-menu">
+                      <ul class="row no-gutters">
+                        <li class="mega-menu-item col-lg-4">
+                          <ul>
+                            <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                            <li><a href="{{ url_for('users.service')}}">service</a></li>
+                            <li>
+                              <a href="{{ url_for('users.investment_plan')}}"
+                                >Bitcoin Investment Plan</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                        <li class="mega-menu-item col-lg-4">
+                          <ul>
+                            <li>
+                              <a href="{{ url_for('users.terms_of_service')}}">
+                                Terms of Services</a
+                              >
+                            </li>
+                            <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                            <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                          </ul>
+                        </li>
+                        <li class="mega-menu-item col-lg-4">
+                          <ul>
+                            <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                            <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                            <li>
+                              <a href="#">
+                                Reset password</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li>
+                    <a href="#"
+                      >team <i class="fa fa-angle-down font-size-12"></i
+                    ></a>
+                    <ul class="drop-menu">
+                      <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a href="#"
+                      >blog <i class="fa fa-angle-down font-size-12"></i
+                    ></a>
+                    <ul class="drop-menu">
+                      <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+              <div class="navbar-toolbar d-flex align-items-center">
+                <ul class="list-items list-items-white">
+                  <li class="d-inline-block mr-2">
+                    <a href="{{ url_for('auth.login')}}"> Login </a>
+                  </li>
+                  <li
+                    class="d-inline-block card hover-y"
+                    style="
+                      background: orange !important;
+                      border-radius: 50px;
+                    "
+                  >
+                    <a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                      Sign Up
+                    </a>
+                  </li>
+                </ul>
+                <div class="hamburger hamburger-white">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line"></span>
+                </div>
+              </div>
+              <!-- end navbar-toolbar -->
+            </div>
+            <!-- end main-navbar -->
+          </div>
+          <!-- end col-lg-10 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end main-menu-wrapper -->
+    </div>
+    <!-- end container -->
+  </div>
+  <!-- end main-menu-header -->
+</header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <div class="my-2">
+            <h2 class="sec-title text-white mb-2">Frequently Asked Question</h2>
+            <p class="text-white">
+              Quickly find the answers to commonly asked questions.
+            </p>
+          </div>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#"> Home </a></li></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+              <li class="breadcrumb-item active" aria-current="page">FAQ</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START FAQ AREA
+================================= -->
+    <section class="faq-area section--padding">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8">
+            <div class="accordion" id="accordionExampleFaq">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <button
+                    class="btn"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    What is Novia Xchange?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Novia Xchange is a leading crypto investment company that
+                    offers a range of investment plans tailored to meet the
+                    diverse needs of investors in the cryptocurrency market.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    How does cryptocurrency investment work?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Cryptocurrency investment involves purchasing digital assets
+                    like Bitcoin, Ethereum, or other tokens with the expectation
+                    that their value will increase over time, allowing investors
+                    to profit from their price appreciation.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    What investment plans does Novia Xchange offer?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseThree"
+                  class="collapse"
+                  aria-labelledby="headingThree"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Novia Xchange provides a variety of investment plans, each
+                    with distinct features and risk levels. These plans include
+                    Growth Plan, Balanced Plan, and Aggressive Plan, catering to
+                    different investor preferences.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    What is the Growth Plan?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseFour"
+                  class="collapse"
+                  aria-labelledby="headingFour"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    The Growth Plan focuses on a balanced approach between
+                    established cryptocurrencies and promising newcomers, aiming
+                    for gradual growth over time. It's suitable for investors
+                    seeking moderate risk and potential returns.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingFive">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    Tell me more about the Balanced Plan.
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseFive"
+                  class="collapse"
+                  aria-labelledby="headingFive"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    The Balanced Plan offers a diversified portfolio across
+                    multiple cryptocurrencies, striking a balance between
+                    stability and growth. This plan is ideal for investors who
+                    want a mix of established and emerging digital assets.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingSix">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseSix"
+                    aria-expanded="false"
+                    aria-controls="collapseSix"
+                  >
+                    What is the Aggressive Plan?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseSix"
+                  class="collapse"
+                  aria-labelledby="headingSix"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    The Aggressive Plan is designed for those comfortable with
+                    higher risk and potential rewards. It concentrates on more
+                    volatile yet potentially high-growth cryptocurrencies,
+                    appealing to experienced investors seeking substantial
+                    returns.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-header" id="headingSeven">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseSeven"
+                    aria-expanded="false"
+                    aria-controls="collapseSeven"
+                  >
+                    How do I get started with Novia Xchange?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseSeven"
+                  class="collapse"
+                  aria-labelledby="headingSeven"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    To begin, visit our website and sign up for an account. Once
+                    registered, you can explore our investment plans, select the
+                    one that aligns with your goals, and make an investment
+                    using your preferred cryptocurrency.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-header" id="headingEight">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseEight"
+                    aria-expanded="false"
+                    aria-controls="collapseEight"
+                  >
+                    Can I switch between investment plans?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseEight"
+                  class="collapse"
+                  aria-labelledby="headingEight"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Yes, you can switch between investment plans, but it's
+                    subject to specific terms and conditions, OR, Consult our
+                    support team for guidance on your chosen investment plan.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-header" id="headingNine">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseNine"
+                    aria-expanded="false"
+                    aria-controls="collapseNine"
+                  >
+                    Are there any fees associated with investing?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseNine"
+                  class="collapse"
+                  aria-labelledby="headingNine"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Yes, there might be fees associated with certain crypto
+                    investment activities, such as trading and management. These
+                    fees are transparently outlined in our fee schedule on the
+                    website.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+              <div class="card">
+                <div class="card-header" id="headingTen">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTen"
+                    aria-expanded="false"
+                    aria-controls="collapseTen"
+                  >
+                    How are my investments secured?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseTen"
+                  class="collapse"
+                  aria-labelledby="headingTen"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Novia Xchange employs advanced security measures, including
+                    encryption, cold storage of assets, and multi-factor
+                    authentication, to ensure the safety of your bitcoin
+                    investments and personal information.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingEleven">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseEleven"
+                    aria-expanded="false"
+                    aria-controls="collapseEleven"
+                  >
+                    Can I withdraw my bitcoin at any time?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseEleven"
+                  class="collapse"
+                  aria-labelledby="headingEleven"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Yes, you can request withdrawals at any time, subject to the
+                    terms of your chosen investment plan. Keep in mind that
+                    withdrawal processing times and potential fees might vary.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingTwelve">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseTwelve"
+                    aria-expanded="false"
+                    aria-controls="collapseTwelve"
+                  >
+                    How does Novia Xchange assist investors with market
+                    insights?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseTwelve"
+                  class="collapse"
+                  aria-labelledby="headingTwelve"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Novia Xchange offers regular market updates, analysis, and
+                    educational content to help investors make informed
+                    decisions about their bitcoin investments.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingThirteen">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseThirteen"
+                    aria-expanded="false"
+                    aria-controls="collapseThirteen"
+                  >
+                    Is there a minimum investment requirement?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseThirteen"
+                  class="collapse"
+                  aria-labelledby="headingThirteen"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    Yes, each investment plan has a specific minimum investment
+                    requirement. Details about these requirements are available
+                    on our website.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+
+              <div class="card">
+                <div class="card-header" id="headingFourteen">
+                  <button
+                    class="btn collapsed"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#collapseFourteen"
+                    aria-expanded="false"
+                    aria-controls="collapseFourteen"
+                  >
+                    How can I contact Novia Xchange for further assistance?
+                    <i class="fa fa-plus"></i>
+                  </button>
+                </div>
+                <div
+                  id="collapseFourteen"
+                  class="collapse"
+                  aria-labelledby="headingFourteen"
+                  data-parent="#accordionExampleFaq"
+                >
+                  <div class="card-body">
+                    You can reach our customer support team via email at
+                    <strong> support@bitnoviacoinsinvest.com </strong>
+                    We're here to assist you with any questions or concerns you
+                    may have.
+                  </div>
+                </div>
+              </div>
+              <!-- end card -->
+            </div>
+            <!-- end accordion -->
+
+            <br /><br />
+
+            <div class="container">
+              <div class="row">
+                <p>
+                  Remember, investing in cryptocurrencies carries inherent
+                  risks. we recommend conducting thorough research and
+                  consulting with financial experts before making any investment
+                  decisions. <br />
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- end col-lg-8 -->
+        </div>
+        <!-- end row -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end faq-area -->
+    <!-- ================================
+       START FAQ AREA
+================================= -->
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+<section class="footer-area padding-top-80px pb-4 bg-gray">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item mb-5">
+          <a href="{{ url_for('users.index')}}" class="d-block">
+            <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo" />
+          </a>
+          <ul class="list-items pt-4">
+            <li class="mb-3">
+              <a href=""
+                ><i class="fa fa-envelope mr-1 font-size-14"></i>
+                hello@bitnoviacoinsinvest.com
+              </a>
+            </li>
+
+            <li class="mb-3">
+              <i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+              President Building, <br />
+              37b Av. John F. Kennedy, <br />
+              1855 Kirchberg, <br />
+              Luxembourg
+            </li>
+            <li class="mb-3">
+              <i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun
+            </li>
+          </ul>
+          <div class="social-icons">
+            <a href="#" class="icon-element icon-element-sm mr-1"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" class="icon-element icon-element-sm mr-1"
+              ><i class="fab fa-twitter"></i
+            ></a>
+            <a href="#" class="icon-element icon-element-sm mr-1"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+            <a href="#" class="icon-element icon-element-sm mr-1"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item mb-5">
+          <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+          <div class="title-shape border-bottom-0"><span></span></div>
+          <ul class="list-items list-items-hover pt-4">
+            <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+            <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+            <li class="mb-2">
+              <a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a>
+            </li>
+
+            <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+            <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+            <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+          </ul>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-item mb-5">
+          <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+          <div class="title-shape border-bottom-0"><span></span></div>
+          <ul class="list-items list-items-hover pt-4">
+            <li class="mb-2"><a href="#">Guide</a></li>
+            <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+            <li class="mb-2"><a href="#">Advertise</a></li>
+            <li class="mb-2"><a href="#">Help Center</a></li>
+            <li class="mb-2"><a href="#">Privacy Policy</a></li>
+            <li class="mb-2">
+              <a href="{{ url_for('users.terms_of_service')}}">Terms of Services</a>
+            </li>
+          </ul>
+        </div>
+        <!-- end footer-item -->
+      </div>
+      <!-- end col-lg-3 -->
+    </div>
+    <!-- end row -->
+  </div>
+  <!-- end container -->
+  <hr class="border-top-gray my-4" />
+
+  <div class="container">
+    <div
+      class="d-flex flex-wrap align-items-center justify-content-between"
+    >
+      <p class="copy-desc" style="color: #000 !important">
+        Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+        <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> |
+        <a href="{{ url_for('users.faq')}}"> FAQ </a>
+      </p>
+
+      <!-- Google Translate container -->
+      <div id="google_translate_element"></div>
+      <!-- end Google Translate container -->
+
+      <div>
+        <a href="https://www.cssf.lu/en/">
+          <img
+            src="{{ url_for('static', filename='imagess/cssf-logo.png')}}"
+            alt=""
+            class="img-fluid mr-3 flex-shrink-0"
+            style="width: 100px"
+          />
+        </a>
+      </div>
+    </div>
+    <!-- end copyright-content -->
+  </div>
+  <!-- end container -->
+</section>
+    <!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="fa fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <!-- end counter js -->
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+<!-- Toastr Notifications - EXTERNAL JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+{% extends 'layout.html' %}
+
+    <!-- NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      toastr.options = {
+        closeButton: true,
+        debug: true,
+        newestOnTop: true,
+        progressBar: true,
+        positionClass: "toast-bottom-left",
+        preventDuplicates: true,
+        showDuration: "3000",
+        hideDuration: "500",
+        timeOut: "3500",
+        extendedTimeOut: "1500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+      };
+
+      setInterval(() => {
+        $.ajax({
+          url: "https://randomuser.me/api/",
+          dataType: "json",
+          success: function (data) {
+            action = ["deposited ", "deposited ", "withdrew ", " invested "];
+            amt = [
+              "$5500",
+              "$7500",
+              "$8,000",
+              "$1,500",
+              "$5,000",
+              "$1,500",
+              "$2,070",
+              "$3,030",
+              "$5,500",
+              "$9000",
+              "$650",
+              "4,500",
+            ];
+            toastr.success(
+              data.results[0].name.first +
+                " " +
+                data.results[0].name.last +
+                " " +
+                action[Math.floor(Math.random() * 3)] +
+                " " +
+                amt[Math.floor(Math.random() * 10)]
+            );
+            console.log(data.results[0].name.first);
+          },
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      const usernamex = [
+        "Sam Courtright ",
+        "Evia Boster",
+        "Leopoldo Alexis ",
+        "Laure Mccrory",
+        "Jana Radel ",
+        "Brunilda Macon ",
+        "Bula Pries ",
+        "Cassidy Rudnick",
+        "Hiram Kilburn  ",
+        "Latrisha Greenly",
+        "Loyd Sadowski ",
+        "Audrey Lindstedt ",
+        "Gisela Chewning",
+        "Katie Rosenstein",
+        "Lorinda Lex  ",
+        "Carie Schreiber",
+        "Ethel Vanatta ",
+        "Carli Spraggs ",
+        "Vivien Basil  ",
+        "Moshe Bogardus ",
+      ];
+    </script>
+
+    <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+  </body>
+</html>

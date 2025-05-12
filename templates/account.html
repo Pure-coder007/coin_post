@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>NoviaXchange | Account</title>
+    <meta charset="utf-8" />
+    <meta
+     name="viewport"
+     content="width=device-width, initial-scale=1"
+    />
+    <link
+   rel="icon"
+   type="image/png"
+   href="{{ url_for('static', filename='assets/img/logo-black.png') }}"
+   sizes="16x16"
+  />
+    <link
+     rel="stylesheet"
+     href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+     href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap"
+     rel="stylesheet"
+    />
+
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='assets/css/style.css')}}" />
+    <!-- chat script -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <!-- bootstrap cdn -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.2/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+
+
+  </head>
+
+  <body>
+    <nav class="navbar bg-body-tertiary bg-dark sticky-top">
+      <div class="container-fluid pl-0 pr-0">
+        <div>
+          <button
+            type="button"
+            id="sidebarCollapse"
+            class="btn text-white pl-0"
+          >
+            <i class="fa fa-bars text-warning"></i>
+            <span class="sr-only">Toggle Menu</span>
+          </button>
+          <a class="navbar-brand" href="{{url_for('users.index')}}">
+            <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="d-inline-block align-text-top img-fluid"
+              width="150rem" height="50rem"
+              style=""
+            />
+          </a>
+        </div>
+        <div class="text-white">
+          <span class="mr-2 mr-md-3 text-warning"
+            ><i class="fa fa-bell" aria-hidden="true"></i
+          ></span>
+          <span class="mr-2 mr-md-3 text-warning"
+            ><i class="fa fa-envelope" aria-hidden="true"></i
+          ></span>
+          <span id="logout">
+            <a href="{{ url_for('auth.logout') }}" class="text-white text-decoration-none">Logout</a>
+          </span>
+        </div>
+      </div>
+    </nav>
+
+    <!-- TradingView Widget BEGIN -->
+    <div
+      class="tradingview-widget-container bg-dark py-0 my-0"
+      style="display: flex; min-height: 5vh; width: 50%"
+    >
+      <div class="tradingview-widget-container__widget"></div>
+      <div class="tradingview-widget-copyright">
+        <a
+          href="https://www.tradingview.com/"
+          rel="noopener nofollow"
+          target="_blank"
+          ><span class="blue-text"></span
+        ></a>
+      </div>
+      <script
+        type="text/javascript"
+        src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
+        async
+      >
+          {
+          "symbols": [
+            {
+              "proName": "BITSTAMP:BTCUSD",
+              "title": "Bitcoin"
+            },
+            {
+              "proName": "BITSTAMP:ETHUSD",
+              "title": "Ethereum"
+            },
+            {
+              "description": "Solana",
+              "proName": "COINBASE:SOLUSD"
+            },
+            {
+              "description": "Xrp",
+              "proName": "BITSTAMP:XRPUSD"
+            },
+            {
+              "description": "Chain Link",
+              "proName": "COINBASE:LINKUSD"
+            },
+            {
+              "description": "Ada",
+              "proName": "BINANCE:ADAUSD"
+            },
+            {
+              "description": "Matic",
+              "proName": "COINBASE:MATICUSD"
+            },
+            {
+              "description": "Avax",
+              "proName": "BINANCE:AVAXUSD"
+            },
+            {
+              "description": "Litecoin",
+              "proName": "COINBASE:LTCUSD"
+            },
+            {
+              "description": "Dogecoin",
+              "proName": "BINANCE:DOGEUSD"
+            },
+            {
+              "description": "Shiba",
+              "proName": "COINBASE:SHIBUSD"
+            },
+            {
+              "description": "Bnb",
+              "proName": "BINANCE:BNBUSD"
+            },
+            {
+              "description": "Cosmos",
+              "proName": "COINBASE:ATOMUSD"
+            },
+            {
+              "description": "Rune",
+              "proName": "BINANCE:RUNEUSD"
+            },
+            {
+              "description": "Xlm",
+              "proName": "BITFINEX:XLMUSD"
+            },
+            {
+              "description": "Fetch",
+              "proName": "COINBASE:FETUSD"
+            },
+            {
+              "description": "Cake",
+              "proName": "BINANCE:CAKEUSD"
+            },
+            {
+              "description": "Floki",
+              "proName": "BITFINEX:FLOKIUSD"
+            },
+            {
+              "description": "Arbitrum",
+              "proName": "COINBASE:ARBUSD"
+            },
+            {
+              "description": "Aave",
+              "proName": "BINANCE:AAVEUSD"
+            }
+          ],
+          "showSymbolLogo": true,
+          "colorTheme": "light",
+          "isTransparent": false,
+          "displayMode": "adaptive",
+          "locale": "en"
+        }
+      </script>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <div class="wrapper d-flex align-items-stretch">
+      <nav id="sidebar">
+        <div class="custom-menu"></div>
+        <div class="p-4">
+          <ul class="list-unstyled components">
+            <li class="pt-3">
+              <a href="{{ url_for('admin.admin') }}"
+                ><i class="fa fa-home mr-3 text-warning"></i> Admin Dashboard</a
+              >
+            </li>
+            <li class="pt-5 active">
+              <a href="{{ url_for('admin.account') }}"
+                ><i class="fa fa-user mr-3 text-warning"></i> Account</a
+              >
+            </li>
+            <li class="pt-5">
+
+              <a href="{{ url_for('admin.bonus_profit') }}"><i class="fa fa-gift mr-3 text-warning"></i> Bonus Profit</a>
+            </li>
+            <li class="pt-5">
+              <a href="{{ url_for('admin.net_profit') }}"
+                ><i class="fa fa-money mr-3 text-warning"></i> Net Profit</a
+              >
+            </li>
+
+            <!-- <li>
+              <a href="#"><span class="fa fa-cogs mr-3"></span> Services</a>
+	          </li>
+	          <li>
+              <a href="#"><span class="fa fa-paper-plane mr-3"></span> Contacts</a>
+	          </li> -->
+          </ul>
+        </div>
+      </nav>
+
+      <!-- main Content  -->
+      <div id="content">
+        <div class="container pl-md-5">
+          <div id="content" class="mt-3 mt-md-5">
+            <div class="table-responsive mt-5">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th scope="col">S/N</th>
+                    <th scope="col">Full Name</th>
+                    <th scope="col">Email Address</th>
+                    <th scope="col">Mobile Number</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Country</th>
+                    <th scope="col">Password</th>
+                    <th scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody id="userTableBody">
+                  {% for user in users %}
+                  <tr>
+                    <th scope="row">{{ loop.index }}</th>
+                    <td>{{ user.fullname }}</td>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.phone }}</td>
+                    <td>{{ user.amount }}</td>
+                    <td>{{ user.country }}</td>
+                    <td>{{ user.password }}</td>
+                    <td class="d-flex justify-content-between align-items-center">
+                      <button class="btn btn-warning btn-outline-dark badge px-2 mx-1" data-bs-toggle="modal" data-bs-target="#example{{ user.id}}">
+                          Add
+                      </button>
+                      <button class="btn btn-warning btn-outline-dark badge px-2 mx-1" data-bs-toggle="modal" data-bs-target="#exampleModal{{ user.id}}">
+                        Manage
+                      </button>
+                    </td>
+                  </tr>
+
+
+                  <!-- Modal -->
+                <div class="modal fade" id="example{{user.id}}" tabindex="-1" aria-labelledby="exampleLabel{{ user.id}}" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleLabel">Add Amount</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="{{ url_for('admin.update_user_amount', user_id=user.id) }}" method="post">
+                          <div class="form-group">
+                              <label for="user-amount" class="col-form-label">Amount:</label>
+                              <input class="form-control shadow-none" type="number" value="{{ user.amount }}"
+                                     id="user-amount" name="amount" placeholder="Amount">
+                          </div>
+
+                          <button type="submit" class="btn btn-warning btn-outline-dark">Add</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+
+                  <!-- Modal -->
+                <div class="modal fade" id="exampleModal{{user.id}}" tabindex="-1" aria-labelledby="exampleModalLabel{{ user.id}}" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Manage User</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body">
+                        <form action="{{ url_for('admin.manage_user', user_id=user.id) }}" method="post">
+                          <div class="form-group">
+                            <label for="recipient-name" class="col-form-label">Message:</label>
+                            <input type="text" class="form-control shadow-none" id="recipient-name" name="message" value="{% if user.message %}{{ user.message }}{% endif %}" placeholder="Message">
+                            <!-- chech box -->
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="on" id="flexCheckDefault" name="show_message" {% if user.show_message %} checked {% endif %}>
+                              <label class="form-check-label" for="flexCheckDefault">
+                                Show/Hide
+                              </label><br>
+
+                              <span class="text-info badge fw-normal">
+                                {% if user.show_message %}
+                                Uncheck this box if you don't want the user to see the message
+                                {% else %}
+                                Check this box if you want the user to see the message
+                                {% endif %}
+                              </span>
+                            </div>
+                          </div>
+
+                          <button type="submit" class="btn btn-warning btn-outline-dark">Update</button>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  {% endfor %}
+                </tbody>
+              </table>
+                </div>
+                <div class="container">
+        <div class="row" id="pagination">
+          <div class="col-12 d-flex centering"> <!-- Centering pagination -->
+            <div class="pagination_rounded">
+              <ul class="d-flex">
+                {% if page > 1 %}
+                <li class="mx-1"><a href="{{ url_for('admin.account', page=1) }}" class="bg-warning p-2"><i
+                      class="fa-solid fa-angles-left text-white"></i></a></li>
+
+                <li class="mx-1">
+                  <a href="{{ url_for('admin.account', page=page-1) }}" data-bs-toggle="popover"
+                    data-bs-trigger="hover" data-bs-content="Previous Page" class="bg-warning p-2">
+                    <i class="fa-solid fa-chevron-left text-white"></i>
+                  </a>
+                </li>
+                {% endif %}
+
+                {% if page < total_pages %}
+                <li class="mx-1">
+                  <a href="{{ url_for('admin.account', page=page+1) }}" data-bs-toggle="popover"
+                    data-bs-trigger="hover" data-bs-content="Next Page" class="bg-warning p-2">
+                    <i class="fa-solid fa-chevron-right text-white"></i>
+                  </a>
+                </li>
+                <li class="mx-1">
+                  <a href="{{ url_for('admin.account', page=total_pages) }}" data-bs-toggle="popover"
+                    data-bs-trigger="hover" data-bs-content="Go to Last Page" class="bg-warning p-2">
+                    <i class="fa-solid fa-angles-right text-white"></i>
+                  </a>
+                </li>
+                {% endif %}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if alert %}
+    <div class="toast alert_toast align-items-center show fade text-white pr-4 {% if bg_color %} bg-{{bg_color}} {% else %} bg-info {% endif %} border-0 right-0 position-fixed top-0 end-0" role="alert"
+    data-bs-autohide="true" aria-live="polite" aria-atomic="true" data-bs-animation="true" style="z-index: 99; margin-top: 5rem; transform: translateX(100%); transition: transform 0.5s ease-in-out;">
+      <div class="d-flex">
+        <div class="toast-body" style="font-size: 1rem;">
+          {{alert}}
+        </div>
+        <!-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button> -->
+      </div>
+    </div>
+  {% endif %}
+
+    <!-- footer -->
+
+    <!-- footer -->
+    <footer
+      class="container-fluid bg-dark text-white text-center pt-2 fixed-bottom"
+    >
+      <div class="row align-items-center">
+        <div class="col-md-1 text-md-right">
+          <!-- Google Translate container -->
+          <div id="google_translate_element"></div>
+          <!-- end Google Translate container -->
+        </div>
+        <div class="col-sm-12 col-md-11 text-center">
+          <h6>
+            Copyright &copy;
+            <script>
+              document.write(new Date().getFullYear());
+            </script>
+            .
+            <a href="www.bitnoviacoinsinvest.com" target="_blank" class="text-white"
+              >Bitnoviacoinsinvest</a
+            >
+            . All Rights Reserved.
+          </h6>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Toastr Notifications - EXTERNAL JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    ></script>
+
+    <!-- NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      toastr.options = {
+        closeButton: true,
+        debug: true,
+        newestOnTop: true,
+        progressBar: true,
+        positionClass: "toast-bottom-left",
+        preventDuplicates: true,
+        showDuration: "3000",
+        hideDuration: "500",
+        timeOut: "3500",
+        extendedTimeOut: "1500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+      };
+
+      setInterval(() => {
+        $.ajax({
+          url: "https://randomuser.me/api/",
+          dataType: "json",
+          success: function (data) {
+            action = ["deposited ", "deposited ", "withdrew ", " invested "];
+            amt = [
+              "$5500",
+              "$7500",
+              "$8,000",
+              "$1,500",
+              "$5,000",
+              "$1,500",
+              "$2,070",
+              "$3,030",
+              "$5,500",
+              "$9000",
+              "$650",
+              "4,500",
+            ];
+            toastr.success(
+              data.results[0].name.first +
+                " " +
+                data.results[0].name.last +
+                " " +
+                action[Math.floor(Math.random() * 3)] +
+                " " +
+                amt[Math.floor(Math.random() * 10)]
+            );
+            console.log(data.results[0].name.first);
+          },
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      const usernamex = [
+        "Sam Courtright ",
+        "Evia Boster",
+        "Leopoldo Alexis ",
+        "Laure Mccrory",
+        "Jana Radel ",
+        "Brunilda Macon ",
+        "Bula Pries ",
+        "Cassidy Rudnick",
+        "Hiram Kilburn  ",
+        "Latrisha Greenly",
+        "Loyd Sadowski ",
+        "Audrey Lindstedt ",
+        "Gisela Chewning",
+        "Katie Rosenstein",
+        "Lorinda Lex  ",
+        "Carie Schreiber",
+        "Ethel Vanatta ",
+        "Carli Spraggs ",
+        "Vivien Basil  ",
+        "Moshe Bogardus ",
+      ];
+    </script>
+
+    <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- Toastr Notifications - EXTERNAL JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+    ></script>
+
+    <script src="{{ url_for('static', filename='assets/js/jquery.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/popper.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='assets/js/main.js') }}"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Make a GET request to the API endpoint to fetch user data
+        const apiUrl = "https://bitnoviacoinsinvest.com/public/api/users"; // Replace with your actual API endpoint
+        fetch(apiUrl)
+          .then((response) => response.json())
+          .then((data) => {
+            // Get the table body element
+            const tableBody = document.getElementById("userTableBody");
+            const users = Array.isArray(data) ? data : data.users || [];
+
+            // Iterate through the data and populate the table rows
+            const rows = users.map((user, index) => {
+              const row = document.createElement("tr");
+              row.innerHTML = `
+                          <th scope="row">${index + 1}</th>
+                          <td>${user.id}</td>
+                          <td>${user.name}</td>
+                          <td>${user.email_address}</td>
+                          <td>0${user.mobile_no}</td>
+                          <td>${user.role}</td>
+                          <td>${user.Account_wallet}</td>
+                          <td>
+                              <button class="btn btn-warning btn-outline-dark addwallet" data-id="${
+                                user.id
+                              }" data-amount="${
+                user.Account_wallet
+              }">Add</button>
+                          </td>
+                      `;
+              return row;
+            });
+
+            // Append the rows to the table body
+            tableBody.append(...rows);
+
+            // Attach the event listener after the table is populated
+            attachAddWalletEventListeners();
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+
+        function attachAddWalletEventListeners() {
+          const addwalletButtons = document.querySelectorAll(".addwallet");
+
+          addwalletButtons.forEach((button) => {
+            button.addEventListener("click", () => {
+              const id = prompt("Enter User id");
+              const amount = prompt("Enter Amount");
+
+              if (id !== null && amount !== null) {
+                const UserData = JSON.parse(localStorage.getItem("userData"));
+                const token = UserData.token;
+
+                const url = `https://bitnoviacoinsinvest.com/public/api/admin/update-wallet/${id}/${amount}`;
+
+                fetch(url, {
+                  method: "PUT",
+                  headers: {
+                    "Content-Type": "application/json",
+                    Authorization: "Bearer " + token,
+                  },
+                })
+                  .then((response) => response.json())
+                  .then((data) => {
+                    if (data) {
+                      console.log(data.message);
+                      alert("Account wallet updated successfully");
+                    } else {
+                      alert("Try again, error");
+                    }
+                  })
+                  .catch((err) => {
+                    console.log(err);
+                  });
+              }
+            });
+          });
+        }
+      });
+    </script>
+
+    <script>
+      const logout = document.getElementById("logout");
+      const userData = JSON.parse(localStorage.getItem("userData"));
+      logout.addEventListener("click", () => {
+        const token = userData.token;
+        const url = "https://bitnoviacoinsinvest.com/public/api/logout";
+        console.log(token);
+
+        const xhr = new XMLHttpRequest();
+
+        // Configure it: POST-request, endpoint URL
+        xhr.open("POST", url, true);
+        const postData = {
+          // key: 'value',
+        };
+        // Set the request headers
+        xhr.setRequestHeader("Content-Type", "application/json");
+        xhr.setRequestHeader("Authorization", "Bearer " + token);
+
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+              // Request was successful
+              console.log(xhr.responseText);
+              // Check if the key exists in localStorage
+              if (localStorage.getItem("userData")) {
+                // Delete the item with the specified key
+                localStorage.removeItem("userData");
+                alert("Logged out successfullly!");
+                // const newPath = "index.html"; // Change to the path of your success page
+                // window.history.pushState({}, "", newPath);
+                window.location.href = "../public_html/index.html";
+              } else {
+                alert("Error in performing Action.");
+              }
+            } else {
+              // There was an error
+              console.error("Error making POST request. Status:", xhr.status);
+              alert("Error in performing Action.");
+            }
+          }
+        };
+
+        // xhr.send()
+        xhr.send(JSON.stringify(postData));
+      });
+    </script>
+
+
+<script>
+  // Function to open the sidebar
+  function openSidebar() {
+    document.getElementById("sidebar").classList.add("active");
+    document.getElementById("content").classList.add("active");
+  }
+
+  // Function to close the sidebar
+  function closeSidebar() {
+    document.getElementById("sidebar").classList.remove("active");
+    document.getElementById("content").classList.remove("active");
+  }
+
+  // Add event listener to the hamburger menu button
+  document.getElementById("sidebarCollapse").addEventListener("click", function() {
+    // Check if the sidebar is already open or closed
+    if (document.getElementById("sidebar").classList.contains("active")) {
+      // If it's open, close it
+      closeSidebar();
+    } else {
+      // If it's closed, open it
+      openSidebar();
+    }
+  });
+</script>
+
+<script>
+  var myToast = new bootstrap.Toast(document.querySelector('.alert_toast'));
+
+  document.querySelector('.alert_toast').style.transform = 'translateX(-0%)';
+
+  setTimeout(function() {
+      // fade the toast away
+      document.querySelector('.alert_toast').style.transition = '4s ease-in-out';
+      myToast.hide();
+  }, 1000);
+  </script>
+
+  </body>
+</html>

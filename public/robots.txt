@@ -1,0 +1,14 @@
+User-agent: Googlebot
+Disallow: /public_html/login.html
+Disallow: /public_html/net-profit.html
+Disallow: /public_html/update-mobile.html
+Disallow: /public_html/bonus-profit.html
+Disallow: /public_html/user.html
+Disallow: /public_html/reset-password.html 
+
+Disallow: /https://www.bitnoviacoinsinvest.com/login.html
+Disallow: /https://www.bitnoviacoinsinvest.com/net-profit.html
+Disallow: /https://www.bitnoviacoinsinvest.com/update-mobile.html
+Disallow: /https://www.bitnoviacoinsinvest.com/bonus-profit.html
+Disallow: /https://www.bitnoviacoinsinvest.com/user.html
+Disallow: /https://www.bitnoviacoinsinvest.com/reset-password.html

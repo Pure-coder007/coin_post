@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="Novia Xchange Invest DevOps">
+
+
+     <!-- Google tag (gtag.js) for Novia Xchange Invest -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHN1RYRFTV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BHN1RYRFTV');
+        </script>
+
+
+	<meta name="keywords" content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Terms of Service | noviaxchangeinvest.com</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}" />
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+    <link
+      href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body style="color: #000;">
+
+<!-- start per-loader -->
+<!-- <div class="loader-container">
+    <div class="loader-ripple">
+        <div></div>
+        <div></div>
+    </div>
+</div> -->
+<!-- end per-loader -->
+
+<!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+    <div class="main-menu-header py-3">
+      <div class="container">
+        <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+          <div class="row align-items-center">
+            <div class="col-lg-2">
+              <a href="{{ url_for('users.index')}}" class="main-logo">
+                  <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="Logo"
+              class="sticky-logo-hide"
+              width="150rem" height="30rem"
+              style=""
+            />
+
+            <img
+            src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+            alt="logo"
+            class="sticky-logo-show"
+            width="150rem" height="30rem"
+          />
+<!--                <img-->
+<!--                  class="sticky-logo-hide"-->
+<!--                  src="{{ url_for('static', filename='imagess/logo-white.png')}}"-->
+<!--                  alt="logo"-->
+<!--                />-->
+                <!-- <img
+                  class="sticky-logo-show"
+                  src="{{ url_for('static', filename='imagess/logo-black.png')}}"
+                  alt="logo"
+                /> -->
+              </a>
+            </div>
+            <!-- end col-lg-2 -->
+            <div class="col-lg-10">
+              <div
+                class="main-navbar d-flex align-items-center justify-content-between"
+              >
+                <nav
+                  class="main-nav main-nav-white text-capitalize main-nav-2"
+                >
+                  <ul>
+                    <li>
+                      <a href="#"
+                        >home <i class="fa fa-angle-down font-size-12"></i
+                      ></a>
+                      <ul class="drop-menu">
+                        <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+                        <li><a href="#">Bonus Profit</a></li>
+                        <li><a href="#">Net Profit</a></li>
+                        <li>
+                          <a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li class="has-mega-menu">
+                      <a href="#">
+                        Menu <i class="fa fa-angle-down font-size-12"></i
+                      ></a>
+                      <div class="drop-menu mega-menu">
+                        <ul class="row no-gutters">
+                          <li class="mega-menu-item col-lg-4">
+                            <ul>
+                              <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                              <li><a href="{{ url_for('users.service')}}">service</a></li>
+                              <li>
+                                <a href="{{ url_for('users.investment_plan')}}"
+                                  >Bitcoin Investment Plan</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                          <li class="mega-menu-item col-lg-4">
+                            <ul>
+                              <li>
+                                <a href="{{ url_for('users.terms_of_service')}}">
+                                  Terms of Services</a
+                                >
+                              </li>
+                              <li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                              <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                            </ul>
+                          </li>
+                          <li class="mega-menu-item col-lg-4">
+                            <ul>
+                              <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                              <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                              <li>
+                                <a href="#">
+                                  Reset password</a
+                                >
+                              </li>
+                            </ul>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >team <i class="fa fa-angle-down font-size-12"></i
+                      ></a>
+                      <ul class="drop-menu">
+                        <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <a href="#"
+                        >blog <i class="fa fa-angle-down font-size-12"></i
+                      ></a>
+                      <ul class="drop-menu">
+                        <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </nav>
+                <div class="navbar-toolbar d-flex align-items-center">
+                  <ul class="list-items list-items-white">
+                    <li class="d-inline-block mr-2">
+                      <a href="{{ url_for('auth.login')}}"> Login </a>
+                    </li>
+                    <li
+                      class="d-inline-block card hover-y"
+                      style="
+                        background: orange !important;
+                        border-radius: 50px;
+                      "
+                    >
+                      <a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+                        Sign Up
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="hamburger hamburger-white">
+                    <span class="line"></span>
+                    <span class="line"></span>
+                    <span class="line"></span>
+                  </div>
+                </div>
+                <!-- end navbar-toolbar -->
+              </div>
+              <!-- end main-navbar -->
+            </div>
+            <!-- end col-lg-10 -->
+          </div>
+          <!-- end row -->
+        </div>
+        <!-- end main-menu-wrapper -->
+      </div>
+      <!-- end container -->
+    </div>
+    <!-- end main-menu-header -->
+  </header>
+<!-- ================================
+         END HEADER AREA
+================================= -->
+
+<!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+<section class="breadcrumb-area bread-bg">
+    <div class="overlay"></div><!-- end overlay -->
+    <div class="container">
+        <div class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative">
+            <div class="my-2">
+                <h2 class="sec-title text-white mb-2">Terms of Services</h2>
+                <p class="text-white">
+				   Last Updated: December 2, 2023
+				</p>
+            </div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="#"> Home </a></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+                    <li class="breadcrumb-item active" aria-current="page"> Terms of Services </li>
+                </ol>
+            </nav>
+        </div><!-- end breadcrumb-content -->
+    </div><!-- end container -->
+</section><!-- end hero-area -->
+<!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+<!-- ================================
+       START TERMS AREA
+================================= -->
+<section class="terms-area section--padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <p> These Terms of Service <strong style="color: orange;"> ("Terms") </strong> govern your use of the Novia Xchange cryptocurrency
+							<br/> investment platform and services.
+							By accessing or using our platform, you agree to <br/> these Terms. Please read them
+							carefully before proceeding.
+						</p> <br/><br/>
+
+
+						<h4 class="card-title mb-2" style="color: orange;"> 1. Account Creation </h4>
+                        <p class="card-text mb-3">
+						   To use Novia Xchange, you must create an account. You agree to provide accurate, current, <br/>
+						   and complete information during the registration process. You are responsible for maintaining <br/>
+						   the security of your account credentials.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 2. Investment Plans </h4>
+                        <p class="card-text mb-3">
+							Novia Xchange offers multiple investment plans with varying risk levels and potential returns. <br/>
+							You understand that all investments involve risks, and past performance is not indicative <br/> of
+							future results. It's your responsibility to choose an investment plan that aligns with <br/> your
+							risk tolerance and financial goals.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 3. Eligibility </h4>
+                        <p class="card-text mb-3">
+						    You must be at least 18 years old to use our services. By using Novia Xchange, <br/>
+							you confirm that you are of legal age to enter into binding agreements.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 4. Investment Process </h4>
+                        <p class="card-text mb-3">
+						    Once you select an investment plan, you may deposit cryptocurrency into your account. <br/>
+							Your investments will be managed according to the chosen plan. We will provide <br/> regular updates
+							and reports about your investments through our platform.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 5. Fees: </h4>
+                        <p class="card-text mb-3">
+						   Novia Xchange charges fees for certain services, including trading and management. <br/>
+						   These fees are clearly outlined on our website. By using our services, you agree <br/> to pay
+						   any applicable fees.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 6. Investment Risks </h4>
+                        <p class="card-text mb-3">
+						    You acknowledge and understand that investing in cryptocurrencies carries inherent risks. <br/>
+							The value of your investments can fluctuate significantly and may result in financial loss. <br/>
+							Novia Xchange is not liable for any losses incurred as a result of your investment decisions.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 7. Withdrawals </h4>
+                        <p class="card-text mb-3">
+						   You may request withdrawals from your account according to the terms of your chosen <br/> investment plan.
+                           Withdrawal processing times and potential fees may vary. <br/> Novia Xchange reserves the right to
+						   impose certain restrictions on withdrawals <br/> to comply with legal and regulatory requirements.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 8. User Conduct </h4>
+                        <p class="card-text mb-3">
+						   You agree to use our platform in a lawful and responsible manner. You will not engage <br/> in activities
+						   that could harm our services or other users. You will also not attempt to gain unauthorized access
+						   to our platform or interfere with its functioning.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 9. Termination </h4>
+                        <p class="card-text mb-3">
+						   Novia Xchange reserves the right to suspend or terminate your account at any time, <br/>
+						   with or without cause. You may also terminate your account by following <br/> the provided instructions.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 10. Changes to Services </h4>
+                        <p class="card-text mb-3">
+						    We may update, modify, or discontinue our services, including investment plans,<br/>
+							at our discretion. We will provide notice of significant changes whenever possible.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 11. Limitation of Liability </h4>
+                        <p class="card-text mb-3">
+						   Novia Xchange is not responsible for any direct, indirect, or consequential damages resulting <br/> from
+                           the use of our platform. We do not guarantee any specific investment outcomes
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 12. Governing Law  </h4>
+                        <p class="card-text mb-3">
+						    These Terms are governed by and construed in accordance with the laws of the Luxembourg. <br/>
+							Any disputes arising from or relating to these Terms will be subject to the exclusive jurisdiction <br/>
+							of the courts of the Luxembourg.
+						</p>
+
+						<h4 class="card-title mb-2" style="color: orange;"> 13. Contact Us </h4>
+                        <p class="card-text mb-3">
+						    If you have questions or concerns about these Terms, please contact us at
+							<h6 style="color: orange;"> support@noviaxchangeinvest.com </h6><br/><br/>
+
+							Thank you for using Novia Xchange. Your use of our platform is subject to these Terms,<br/>
+							and we appreciate your understanding and co-operation. <br/><br/><br/>
+
+
+							<strong style="color: orange;"> Office Address: </strong> <br/>
+							Novia Xchange, <br/>
+							President Building, <br/>
+							37b Av. John F. Kennedy, <br/>
+							1855 Kirchberg Luxembourg. <br/>
+
+						</p>
+
+					</div><!-- end card-body -->
+                </div><!-- end card -->
+            </div><!-- end col-lg-8 -->
+
+        </div><!-- end row -->
+    </div><!-- end container -->
+</section><!-- end terms-area -->
+<!-- ================================
+       START TERMS AREA
+================================= -->
+
+<!-- ================================
+         END FOOTER AREA
+================================= -->
+<section class="footer-area padding-top-80px pb-4 bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item mb-5">
+            <a href="{{ url_for('users.index')}}" class="d-block">
+              <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo" />
+            </a>
+            <ul class="list-items pt-4">
+              <li class="mb-3">
+                <a href=""
+                  ><i class="fa fa-envelope mr-1 font-size-14"></i>
+                  hello@noviaxchangeinvest.com
+                </a>
+              </li>
+
+              <li class="mb-3">
+                <i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+                President Building, <br />
+                37b Av. John F. Kennedy, <br />
+                1855 Kirchberg, <br />
+                Luxembourg
+              </li>
+              <li class="mb-3">
+                <i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun
+              </li>
+            </ul>
+            <div class="social-icons">
+              <a href="#" class="icon-element icon-element-sm mr-1"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="icon-element icon-element-sm mr-1"
+                ><i class="fab fa-twitter"></i
+              ></a>
+              <a href="#" class="icon-element icon-element-sm mr-1"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="icon-element icon-element-sm mr-1"
+                ><i class="fab fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item mb-5">
+            <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+            <div class="title-shape border-bottom-0"><span></span></div>
+            <ul class="list-items list-items-hover pt-4">
+              <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+              <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+              <li class="mb-2">
+                <a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a>
+              </li>
+
+              <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+              <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+              <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+        <div class="col-lg-3 col-md-6">
+          <div class="footer-item mb-5">
+            <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+            <div class="title-shape border-bottom-0"><span></span></div>
+            <ul class="list-items list-items-hover pt-4">
+              <li class="mb-2"><a href="#">Guide</a></li>
+              <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+              <li class="mb-2"><a href="#">Advertise</a></li>
+              <li class="mb-2"><a href="#">Help Center</a></li>
+              <li class="mb-2"><a href="#">Privacy Policy</a></li>
+              <li class="mb-2">
+                <a href="{{ url_for('users.terms_of_service')}}">Terms of Services</a>
+              </li>
+            </ul>
+          </div>
+          <!-- end footer-item -->
+        </div>
+        <!-- end col-lg-3 -->
+      </div>
+      <!-- end row -->
+    </div>
+    <!-- end container -->
+    <hr class="border-top-gray my-4" />
+
+    <div class="container">
+      <div
+        class="d-flex flex-wrap align-items-center justify-content-between"
+      >
+        <p class="copy-desc" style="color: #000 !important">
+          Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+          <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> |
+          <a href="{{ url_for('users.faq')}}"> FAQ </a>
+        </p>
+
+        <!-- Google Translate container -->
+        <div id="google_translate_element"></div>
+        <!-- end Google Translate container -->
+
+        <div>
+          <a href="https://www.cssf.lu/en/">
+            <img
+              src="{{ url_for('static', filename='imagess/cssf-logo.png')}}"
+              alt=""
+              class="img-fluid mr-3 flex-shrink-0"
+              style="width: 100px"
+            />
+          </a>
+        </div>
+      </div>
+      <!-- end copyright-content -->
+    </div>
+    <!-- end container -->
+  </section><!-- end footer-area -->
+<!-- ================================
+          END FOOTER AREA
+================================= -->
+
+<!-- start scroll-to-top -->
+<div id="scroll-to-top">
+    <i class="fa fa-angle-up" title="Go top"></i>
+</div>
+<!-- end scroll-to-top -->
+
+
+
+<!-- Template JS Files -->
+<script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <!-- end counter js -->
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+<!-- Toastr Notifications - EXTERNAL JS -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+
+{% extends 'layout.html' %}
+	<!-- NOTIFICATIONS CONTAINER - JS -->
+
+		<script type="text/javascript">
+			toastr.options = {
+                    "closeButton": true,
+                    "debug": true,
+                    "newestOnTop": true,
+                    "progressBar": true,
+                    "positionClass": "toast-bottom-left",
+                    "preventDuplicates": true,
+                    "showDuration": "3000",
+                    "hideDuration": "500",
+                    "timeOut": "3500",
+                    "extendedTimeOut": "1500",
+                    "showEasing": "swing",
+                    "hideEasing": "linear",
+                    "showMethod": "fadeIn",
+                    "hideMethod": "fadeOut"
+                }
+
+                setInterval(() => {
+                    $.ajax({
+                        url: 'https://randomuser.me/api/',
+                        dataType: 'json',
+                        success: function(data) {
+                            action = ['deposited ', 'deposited ', 'withdrew ', ' invested '];
+                            amt = ['$5500', '$7500', '$8,000', '$1,500', '$5,000', '$1,500', '$2,070', '$3,030', '$5,500', '$9000', '$650', '4,500']
+                            toastr.success(data.results[0].name.first+' '+data.results[0].name.last+' '+action[Math.floor(Math.random() * 3)]+' '+amt[Math.floor(Math.random() * 10)])
+                            console.log(data.results[0].name.first);
+                        }
+                    });
+
+                }, 2000);
+
+
+		</script>
+
+	    <script type="text/javascript">
+			const usernamex = ['Sam Courtright ',
+                    'Evia Boster',
+                    'Leopoldo Alexis ',
+                    'Laure Mccrory',
+                    'Jana Radel ',
+                    'Brunilda Macon ',
+                    'Bula Pries ',
+                    'Cassidy Rudnick',
+                    'Hiram Kilburn  ',
+                    'Latrisha Greenly',
+                    'Loyd Sadowski ',
+                    'Audrey Lindstedt ',
+                    'Gisela Chewning',
+                    'Katie Rosenstein',
+                    'Lorinda Lex  ',
+                    'Carie Schreiber',
+                    'Ethel Vanatta ',
+                    'Carli Spraggs ',
+                    'Vivien Basil  ',
+                    'Moshe Bogardus '
+                ]
+
+		</script>
+
+	<!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+
+
+
+<!-- Google Translate JS -->
+<script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'},
+                'google_translate_element'
+            );
+        }
+</script>
+
+<script type="text/javascript"
+            src=
+			"https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit">
+</script>
+<!-- End of Google Translate JS -->
+
+
+
+</body>
+</html>

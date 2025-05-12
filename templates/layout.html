@@ -1,0 +1,152 @@
+
+
+<div>
+
+     <!-- Favicon -->
+     <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}">
+
+     <!-- Google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+     <link href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+ 
+     <!-- Template CSS Files -->
+     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+     <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+   <!-- Toastr Notifications - EXTERNAL CSS -->
+   <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- Toastr Notifications - EXTERNAL CSS -->
+     <link
+       rel="stylesheet"
+       type="text/css"
+       href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+     />
+    
+      <!-- Template JS Files -->
+      <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <!-- <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script> -->
+    <!-- end counter js -->
+    <!-- <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script> -->
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+      <!-- Toastr Notifications - EXTERNAL JS -->
+      <script
+        type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"
+      ></script>
+
+      <!-- NOTIFICATIONS CONTAINER - JS -->
+
+      <script type="text/javascript">
+        toastr.options = {
+          closeButton: true,
+          debug: true,
+          newestOnTop: true,
+          progressBar: true,
+          positionClass: "toast-bottom-left",
+          preventDuplicates: true,
+          showDuration: "3000",
+          hideDuration: "500",
+          timeOut: "3500",
+          extendedTimeOut: "1500",
+          showEasing: "swing",
+          hideEasing: "linear",
+          showMethod: "fadeIn",
+          hideMethod: "fadeOut",
+        };
+
+        setInterval(() => {
+          $.ajax({
+            url: "https://randomuser.me/api/",
+            dataType: "json",
+            success: function (data) {
+              action = ["deposited ", "deposited ", "withdrew ", " invested "];
+              amt = [
+                "$5500",
+                "$7500",
+                "$8,000",
+                "$1,500",
+                "$5,000",
+                "$1,500",
+                "$2,070",
+                "$3,030",
+                "$5,500",
+                "$9000",
+                "$650",
+                "4,500",
+              ];
+              toastr.success(
+                data.results[0].name.first +
+                  " " +
+                  data.results[0].name.last +
+                  " " +
+                  action[Math.floor(Math.random() * 3)] +
+                  " " +
+                  amt[Math.floor(Math.random() * 10)]
+              );
+              console.log(data.results[0].name.first);
+            },
+          });
+        }, 2000);
+      </script>
+
+      <script type="text/javascript">
+        const usernamex = [
+          "Sam Courtright ",
+          "Evia Boster",
+          "Leopoldo Alexis ",
+          "Laure Mccrory",
+          "Jana Radel ",
+          "Brunilda Macon ",
+          "Bula Pries ",
+          "Cassidy Rudnick",
+          "Hiram Kilburn  ",
+          "Latrisha Greenly",
+          "Loyd Sadowski ",
+          "Audrey Lindstedt ",
+          "Gisela Chewning",
+          "Katie Rosenstein",
+          "Lorinda Lex  ",
+          "Carie Schreiber",
+          "Ethel Vanatta ",
+          "Carli Spraggs ",
+          "Vivien Basil  ",
+          "Moshe Bogardus ",
+        ];
+      </script>
+
+      <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+      
+   
+
+      <!-- Google Translate JS -->
+      <script type="text/javascript">
+        function googleTranslateElementInit() {
+          new google.translate.TranslateElement(
+            { pageLanguage: "en" },
+            "google_translate_element"
+          );
+        }
+      </script>
+
+      <script
+        type="text/javascript"
+        src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+      ></script>
+</div>

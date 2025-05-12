@@ -1,0 +1,691 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="author" content="Novia Xchange DevOps">
+	<meta name="keywords" content="bitcoin, bitcoin investment, crypto investment, blockchain, cryptocurrency, crypto trading, altcoin, invest bitcoin, invest crypto, crypto investment platform, bitcoin investment, platform, bitcoin price, bitcoin news, bitcoin price chart, cryptocurrency trading">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> Home | noviaxchangeinvest.com </title>
+
+    <!-- Google tag (gtag.js) for Novia Xchange Invest -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-BHN1RYRFTV"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-BHN1RYRFTV');
+        </script>
+
+    <!-- Favicon -->
+    <link rel="icon" href="{{ url_for('static', filename='imagess/favicon.png')}}">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="../../../../../css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Template CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap-select.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='font-awesome.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='owl.theme.default.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='jquery.fancybox.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='toastr.min.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+
+    <script src="{{ url_for('static', filename='js/main.js')}}" defer></script>
+	<!-- Toastr Notifications - EXTERNAL CSS -->
+	<!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" /> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+</head>
+
+<body style="color: #000;">
+
+<!-- start per-loader -->
+<!-- <div class="loader-container">
+    <div class="loader-ripple">
+        <div></div>
+        <div></div>
+    </div>
+</div> -->
+<!-- end per-loader -->
+
+<!-- ================================
+            START HEADER AREA
+================================= -->
+<header class="header-area">
+    <div class="main-menu-header py-3">
+        <div class="container">
+            <div class="main-menu-wrapper bg-transparent rounded-0 p-0">
+                <div class="row align-items-center">
+                    <div class="col-lg-2">
+                        <a href="{{ url_for('users.index')}}" class="main-logo">
+                            <img
+              src="{{url_for('static', filename='assets/img/new_logo2.png')}}"
+              alt="logo"
+              class="sticky-logo-show"
+              width="150rem" height="30rem"
+            />
+
+            <img
+              src="{{url_for('static', filename='assets/img/new_logo.png')}}"
+              alt="logo"
+              class="sticky-logo-hide"
+              width="150rem" height="30rem"
+            />
+<!--                            <img class="sticky-logo-hide" src="{{ url_for('static', filename='imagess/logo-white.png')}}" alt="logo">-->
+                            <!-- <img class="sticky-logo-show" src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo"> -->
+                        </a>
+                    </div><!-- end col-lg-2 -->
+                    <div class="col-lg-10">
+                        <div class="main-navbar d-flex align-items-center justify-content-between">
+                            <nav class="main-nav main-nav-white text-capitalize main-nav-2">
+                                <ul>
+                                    <li>
+                                        <a href="#">home <i class="fa fa-angle-down font-size-12" ></i></a>
+                                        <ul class="drop-menu">
+                                            <li><a href="{{ url_for('users.index')}}"> Home </a></li>
+											<li><a href="{{ url_for('users.bitcoin_chart')}}"> Bitcoin Chart </a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="has-mega-menu">
+                                        <a href="#"> Menu <i class="fa fa-angle-down font-size-12"></i></a>
+                                        <div class="drop-menu mega-menu">
+                                            <ul class="row no-gutters">
+                                                <li class="mega-menu-item col-lg-4">
+                                                    <ul>
+                                                        <li><a href="{{ url_for('users.about')}}">about us</a></li>
+                                                        <li><a href="{{ url_for('users.service')}}">services</a></li>
+														<li><a href="{{ url_for('users.investment_plan')}}"> Investment Plan </a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="mega-menu-item col-lg-4">
+                                                    <ul>
+                                                        <li><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services</a></li>
+														<li><a href="{{ url_for('users.faq')}}">FAQ</a></li>
+                                                        <li><a href="{{ url_for('users.contact')}}">contact</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="mega-menu-item col-lg-4">
+                                                    <ul>
+                                                        <li><a href="{{ url_for('auth.sign_up')}}"> Sign up</a></li>
+                                                        <li><a href="{{ url_for('auth.login')}}"> Login</a></li>
+                                                       <li><a href="{{ url_for('auth.reset_password')}}"> Reset password</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">team <i class="fa fa-angle-down font-size-12"></i></a>
+                                        <ul class="drop-menu">
+                                            <li><a href="{{ url_for('users.team')}}"> team </a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#">blog <i class="fa fa-angle-down font-size-12"></i></a>
+                                        <ul class="drop-menu">
+                                            <li><a href="{{ url_for('users.blog')}}"> blog </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <div class="navbar-toolbar d-flex align-items-center">
+                                <ul class="list-items list-items-white">
+                                    <li class="d-inline-block mr-2"><a href="{{ url_for('auth.login')}}"> Login </a></li>
+                                    <li class="d-inline-block card hover-y" style="background: orange !important; border-radius: 50px;"><a href="{{ url_for('auth.sign_up')}}" class="btn btn-sm text-white">
+									Sign Up </a></li>
+                                </ul>
+                                <div class="hamburger hamburger-white">
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                    <span class="line"></span>
+                                </div>
+                            </div><!-- end navbar-toolbar -->
+                        </div><!-- end main-navbar -->
+                    </div><!-- end col-lg-10 -->
+                </div><!-- end row -->
+            </div><!-- end main-menu-wrapper -->
+        </div> <!-- end container -->
+    </div><!-- end main-menu-header -->
+</header>
+    <!-- ================================
+         END HEADER AREA
+================================= -->
+
+    <!-- ================================
+    START BREADCRUMB AREA
+================================= -->
+    <section class="breadcrumb-area bread-bg">
+      <div class="overlay"></div>
+      <!-- end overlay -->
+      <div class="container">
+        <div
+          class="breadcrumb-content d-flex flex-wrap align-items-center justify-content-between position-relative"
+        >
+          <h2 class="sec-title text-white my-2">Login</h2>
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb justify-content-center">
+              <li class="breadcrumb-item"><a href="#">Home</a></li><i class="fa-solid fa-angle-right text-white mt-2 mx-2" style="font-size: .3rem !important;"></i>
+
+              <li class="breadcrumb-item active" aria-current="page">Login</li>
+            </ol>
+          </nav>
+        </div>
+        <!-- end breadcrumb-content -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end hero-area -->
+    <!-- ================================
+    END BREADCRUMB AREA
+================================= -->
+
+    <!-- ================================
+       START CONTACT AREA
+================================= -->
+    <section class="contact-area section--padding">
+      <div class="container">
+        <div class="col-lg-6 mx-auto">
+          {% if alert %}
+          <div class="text-center alert alert-{{bg_color}}" style="font-size: .8rem;">
+            <span class="text-{{bg_color}}">{{alert}}</span>
+          </div>
+          {% endif %}
+          <div class="card">
+            <div class="card-body">
+              <div class="text-center">
+                <h3 class="font-weight-bold mb-1">Login to your account</h3>
+                <p class="font-size-15">
+                  Please check that you are visiting the correct URL
+                </p>
+                <div
+                  class="border border-gray d-inline-block py-1 px-4 rounded-pill font-size-14 mt-3"
+                >
+                  <span class="text-success"
+                    ><i class="fal fa-lock mr-1"></i> https://
+                    noviaxchangeinvest.com
+                  </span>
+                </div>
+              </div>
+              <hr class="border-top-gray my-4" />
+              <form id="" action="" method="post">
+                <div class="form-group">
+                  <input
+                    class="form-control form--control"
+                    type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    value="{{email}}"
+                    required
+                  />
+                </div>
+                <!-- end form-group -->
+                <div class="form-group">
+                  <div class="position-relative">
+                    <input
+                      class="form-control form--control password-field"
+                      type="password"
+                      name="password"
+                      value="{{ password}}"
+                      placeholder="Password"
+                      required
+                    />
+                    <a
+                      href="javascript:void(0)"
+                      class="position-absolute top-0 right-0 h-100 btn toggle-password"
+                      title="Toggle show/hide password"
+                    >
+                      <i class="far fa-eye eye-on"></i>
+                      <i class="far fa-eye-slash eye-off"></i>
+                    </a>
+                  </div>
+                  <small class="form-text">
+
+                  </small>
+                </div>
+                <!-- end form-group -->
+                <div
+                  class="form-group d-flex align-items-center justify-content-between"
+                >
+                  <div class="custom-control custom-checkbox">
+                    <input
+                      type="checkbox"
+                      class="custom-control-input"
+                      id="signin-remember"
+                    />
+                    <label
+                      class="custom-control-label font-weight-normal"
+                      for="signin-remember"
+                      >Remember Me</label
+                    >
+                  </div>
+                  <a
+                    href="#"
+                    class="btn-link font-size-15 font-weight-normal"
+                    >Forgot Password?</a
+                  >
+                </div>
+                <!-- end form-group -->
+                <button class="btn btn-primary w-100" type="submit" id="btn">
+                  Login Now
+                </button>
+              </form>
+              <p class="font-size-14 pt-2 text-center font-weight-normal">
+                Don't have an account?
+                <a href="{{ url_for('auth.sign_up')}}" class="text-color btn-link">Sign Up</a>
+              </p>
+              <hr class="border-top-gray my-4" />
+              <div class="text-center">
+                <span class="icon-element icon-element-md">Or</span>
+                <p class="font-size-15 py-3 font-weight-normal">
+                  Login with your social network.
+                </p>
+                <div class="social-signup">
+                  <a href="#" class="btn btn-sm btn-light mx-1"
+                    ><i class="fab fa-google mr-2"></i> Google</a
+                  >
+                  <a href="#" class="btn btn-sm btn-light mx-1"
+                    ><i class="fab fa-facebook-f mr-2"></i> Facebook</a
+                  >
+                  <a href="#" class="btn btn-sm btn-light mx-1"
+                    ><i class="fab fa-twitter mr-2"></i> Twitter</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end col-lg-6 -->
+      </div>
+      <!-- end container -->
+    </section>
+    <!-- end contact-area -->
+    <!-- ================================
+       START CONTACT AREA
+================================= -->
+
+    <!-- ================================
+         END FOOTER AREA
+================================= -->
+<section class="footer-area padding-top-80px pb-4">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <a href="{{ url_for('users.index')}}" class="d-block">
+                      <img src="{{ url_for('static', filename='imagess/logo-black.png')}}" alt="logo">
+                  </a>
+                  <ul class="list-items pt-4">
+                      <li class="mb-3"><a href=""><i class="fa fa-envelope mr-1 font-size-14"></i>
+             hello@noviaxchangeinvest.com </a></li>
+                      <li class="mb-3"><i class="fa fa-map-marker-alt mr-1 font-size-14"></i>
+              President Building, <br/> 37b Av. John F. Kennedy, <br/> 1855 Kirchberg, <br/> Luxembourg </li>
+                      <li class="mb-3"><i class="fa fa-clock mr-1 font-size-14"></i> Mon-Sun </li>
+                  </ul>
+                  <div class="social-icons">
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-facebook-f"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-twitter"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-linkedin-in"></i></a>
+                      <a href="#" class="icon-element icon-element-sm mr-1"><i class="fab fa-instagram"></i></a>
+                  </div>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Company</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="{{ url_for('users.about')}}"> About </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.team')}}"> Team</a></li>
+                      <li class="mb-2"><a href="{{url_for('users.investment_plan')}}"> Investment Plan </a></li>
+
+                      <li class="mb-2"><a href="{{ url_for('users.service')}}"> Service </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.contact')}}"> Contact </a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.blog')}}"> Blog </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+          <div class="col-lg-3 col-md-6">
+              <div class="footer-item mb-5">
+                  <h5 class="mb-3 font-weight-semi-bold">Help & Support</h5>
+                  <div class="title-shape border-bottom-0"><span></span></div>
+                  <ul class="list-items list-items-hover pt-4">
+                      <li class="mb-2"><a href="#">Guide</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.faq')}}">Faq</a></li>
+                      <li class="mb-2"><a href="#">Advertise</a></li>
+                      <li class="mb-2"><a href="#">Help Center</a></li>
+                      <li class="mb-2"><a href="#">Privacy Policy</a></li>
+                      <li class="mb-2"><a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a></li>
+                  </ul>
+              </div><!-- end footer-item -->
+          </div><!-- end col-lg-3 -->
+
+      </div><!-- end row -->
+  </div><!-- end container -->
+  <hr class="border-top-gray my-4">
+
+  <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-between">
+      <!-- Google Translate container -->
+    <div id="google_translate_element"></div>
+    <!-- end Google Translate container -->
+
+          <p class="copy-desc" style="color: #000 !important;">Copyright &copy; 2024 Novia Xchange. All Rights Reserved.
+        <a href="{{ url_for('users.terms_of_service')}}"> Terms of Services </a> | <a href="{{ url_for('users.faq')}}"> FAQ </a>
+    </p>
+
+    <div>
+    <a href="https://www.cssf.lu/en/">
+    <img src="{{ url_for('static', filename='imagess/cssf.png')}}" alt="" class="img-fluid mr-3 flex-shrink-0" style="width: 100px;">
+    </a>
+    </div>
+      </div><!-- end copyright-content -->
+  </div><!-- end container -->
+
+
+  {% if alert %}
+  <div class="toast alert_toast align-items-center show fade text-white pr-4 {% if bg_color %} bg-{{bg_color}} {% else %} bg-info {% endif %} border-0 right-0 position-fixed top-0 end-0" role="alert"
+  data-bs-autohide="true" aria-live="polite" aria-atomic="true" data-bs-animation="true" style="z-index: 99; margin-top: 5rem; transform: translateX(100%); transition: transform 0.5s ease-in-out;">
+    <div class="d-flex">
+      <div class="toast-body" style="font-size: 1rem;">
+        {{alert}}
+      </div>
+      <!-- <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button> -->
+    </div>
+  </div>
+{% endif %}
+
+
+{% extends 'layout.html' %}
+
+
+
+</section><!-- end footer-area -->
+    <!-- ================================
+          END FOOTER AREA
+================================= -->
+
+    <!-- start scroll-to-top -->
+    <div id="scroll-to-top">
+      <i class="far fa-angle-up" title="Go top"></i>
+    </div>
+    <!-- end scroll-to-top -->
+
+    <!-- Template JS Files -->
+    <script src="{{ url_for('static', filename='js/jquery-3.4.1.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/bootstrap-select.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl.carousel.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.fancybox.min.js')}}"></script>
+    <!-- Start counter js -->
+    <script src="{{ url_for('static', filename='js/waypoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/jquery.counterup.min.js')}}"></script>
+    <!-- end counter js -->
+    <script src="{{ url_for('static', filename='js/jquery.lazy.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/main.js')}}"></script>
+    <!-- Toastr Notifications - INTERNAL JS -->
+    <script src="{{ url_for('static', filename='js/toastr.min.js')}}"></script>
+
+    <!-- Toastr Notifications - EXTERNAL JS -->
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    ></script>
+
+    <script>
+      // Wait for the DOM to be fully loaded
+document.addEventListener("DOMContentLoaded", function() {
+    // Select the toggle password button
+    var togglePassword = document.querySelector(".toggle-password");
+
+    // Select the password field
+    var passwordField = document.querySelector(".password-field");
+
+    // Add click event listener to the toggle password button
+    togglePassword.addEventListener("click", function() {
+        // Toggle the type attribute of the password field
+        if (passwordField.type === "password") {
+            passwordField.type = "text";
+            // Change eye icon to show the password
+            togglePassword.querySelector(".eye-on").style.display = "none";
+            togglePassword.querySelector(".eye-off").style.display = "block";
+        } else {
+            passwordField.type = "password";
+            // Change eye icon to hide the password
+            togglePassword.querySelector(".eye-on").style.display = "block";
+            togglePassword.querySelector(".eye-off").style.display = "none";
+        }
+    });
+});
+
+    </script>
+
+
+
+
+    <!-- NOTIFICATIONS CONTAINER - JS -->
+
+    <script type="text/javascript">
+      toastr.options = {
+        closeButton: true,
+        debug: true,
+        newestOnTop: true,
+        progressBar: true,
+        positionClass: "toast-bottom-left",
+        preventDuplicates: true,
+        showDuration: "3000",
+        hideDuration: "500",
+        timeOut: "3500",
+        extendedTimeOut: "1500",
+        showEasing: "swing",
+        hideEasing: "linear",
+        showMethod: "fadeIn",
+        hideMethod: "fadeOut",
+      };
+
+      setInterval(() => {
+        $.ajax({
+          url: "https://randomuser.me/api/",
+          dataType: "json",
+          success: function (data) {
+            action = ["deposited ", "deposited ", "withdrew ", " invested "];
+            amt = [
+              "$5500",
+              "$7500",
+              "$8,000",
+              "$1,500",
+              "$5,000",
+              "$1,500",
+              "$2,070",
+              "$3,030",
+              "$5,500",
+              "$9000",
+              "$650",
+              "4,500",
+            ];
+            toastr.success(
+              data.results[0].name.first +
+                " " +
+                data.results[0].name.last +
+                " " +
+                action[Math.floor(Math.random() * 3)] +
+                " " +
+                amt[Math.floor(Math.random() * 10)]
+            );
+            console.log(data.results[0].name.first);
+          },
+        });
+      }, 2000);
+    </script>
+
+    <script type="text/javascript">
+      const usernamex = [
+        "Sam Courtright ",
+        "Evia Boster",
+        "Leopoldo Alexis ",
+        "Laure Mccrory",
+        "Jana Radel ",
+        "Brunilda Macon ",
+        "Bula Pries ",
+        "Cassidy Rudnick",
+        "Hiram Kilburn  ",
+        "Latrisha Greenly",
+        "Loyd Sadowski ",
+        "Audrey Lindstedt ",
+        "Gisela Chewning",
+        "Katie Rosenstein",
+        "Lorinda Lex  ",
+        "Carie Schreiber",
+        "Ethel Vanatta ",
+        "Carli Spraggs ",
+        "Vivien Basil  ",
+        "Moshe Bogardus ",
+      ];
+    </script>
+
+    <!-- End of NOTIFICATIONS CONTAINER - JS -->
+
+
+    <!-- Google Translate JS -->
+    <script type="text/javascript">
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          { pageLanguage: "en" },
+          "google_translate_element"
+        );
+      }
+    </script>
+
+    <script
+      type="text/javascript"
+      src="https://translate.google.com/translate_a/element.js?
+			cb=googleTranslateElementInit"
+    ></script>
+    <!-- End of Google Translate JS -->
+
+    <!-- <script>
+      const btn = document.getElementById("btn");
+      const form = document.getElementById("Myform");
+
+      function postData() {
+        event.preventDefault();
+        const password = document.getElementsByName("password")[0].value;
+        const email = document.getElementsByName("email")[0].value;
+        const url = "https://noviaxchangeinvest.com/public/api/login";
+
+        // Create FormData object and append form data
+        const data = {
+          email,
+          password,
+        };
+        // Make the POST request using the fetch API
+        fetch(url, {
+          method: "POST",
+          //  mode: 'no-cors',
+          headers: {
+            "Content-Type": "application/json", // Set the content type to JSON
+          },
+          body: JSON.stringify(data), // Convert data to JSON string
+        })
+          .then((response) => response.json())
+          .then((data) => {
+            if (data) {
+              // Redirect to another HTML page
+              const newPath = "user.html"; // Change to the path of your success page
+              window.history.pushState({}, "", newPath);
+              console.log(data);
+              // Optionally, you can load content dynamically for the new path here
+              localStorage.setItem("userData", JSON.stringify(data));
+
+              // Retrieving data from localStorage
+              const userData = JSON.parse(localStorage.getItem("userData"));
+              // Handle success, such as showing a success message or any additional actions
+            } else {
+              // Handle other cases if needed
+              console.log("Login unsuccessful");
+            }
+
+            // Handle success, such as showing a success message or redirecting
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+            // Handle errors, such as displaying an error message to the user
+          });
+      }
+      btn.addEventListener("click", postData);
+    </script> -->
+
+
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const btn = document.getElementById("btn");
+        const form = document.getElementById("Myform");
+
+        async function postData() {
+          event.preventDefault();
+          const password = document.getElementsByName("password")[0].value;
+          const email = document.getElementsByName("email")[0].value;
+          const url = "https://noviaxchangeinvest.com/public/api/login";
+
+          const data = {
+            email,
+            password,
+          };
+
+          try {
+            const response = await fetch(url, {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(data),
+            });
+
+            const responseData = await response.json();
+
+            if (responseData) {
+              if (responseData.message === "Invalid login Credentials") {
+                alert(responseData.message);
+              } else {
+                const newPath =
+                  email === "admin102@bitnovia.com" && password === "admin10150"
+                    ? "../hidden/admin.html"
+                    : "../hidden/user.html";
+                window.location.href = newPath;
+                alert("Login successful");
+                localStorage.setItem("userData", JSON.stringify(responseData));
+              }
+            } else {
+              console.log("Login unsuccessful");
+            }
+          } catch (error) {
+            console.error("Error:", error);
+            alert('Something went wrong. Please try again later');
+          }
+        }
+
+        form.addEventListener("submit", postData);
+      });
+    </script>
+
+<script>
+  var myToast = new bootstrap.Toast(document.querySelector('.alert_toast'));
+
+  document.querySelector('.alert_toast').style.transform = 'translateX(-0%)';
+
+  setTimeout(function() {
+      // fade the toast away
+      document.querySelector('.alert_toast').style.transition = '4s ease-in-out';
+      myToast.hide();
+  }, 1000);
+  </script>
+  </body>
+</html>
