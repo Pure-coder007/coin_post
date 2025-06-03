@@ -6,6 +6,10 @@ from flask_login import UserMixin
 import random
 from sqlalchemy import desc
 import re
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 
 
 def generate_random_otp():
@@ -73,9 +77,9 @@ def add_admin():
     admin = Admins.query.first()
     if not admin:
         admin = Admins(
-            fullname="Bitnovia Coins",
-            email="admin101@bitnovia.com",
-            password=sha256.hash("Bitnovia@101")
+            fullname=os.getenv("ADMIN_NAME"),
+            email=os.getenv("ADMIN_EMAIL"),
+            password=sha256.hash(os.getenv("ADMIN_PASSWORD"))
         )
         db.session.add(admin)
         db.session.commit()
